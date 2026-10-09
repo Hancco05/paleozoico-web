@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paleozoico · La Era de la Vida Antigua</title>
-    <!-- Estilos CSS -->
     <style>
-        /* Reset y variables */
         * {
             margin: 0;
             padding: 0;
@@ -31,7 +29,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Header con efecto parallax */
         header {
             background: linear-gradient(rgba(20, 40, 20, 0.75), rgba(30, 50, 30, 0.85)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600"><rect width="1200" height="600" fill="%233a5e3a"/><path d="M0 400 Q150 350 300 380 T600 340 T900 370 T1200 330 L1200 600 L0 600 Z" fill="%232e4a2e" opacity="0.6"/><path d="M0 450 Q200 420 400 460 T800 430 T1200 470 L1200 600 L0 600 Z" fill="%231e3a1e" opacity="0.7"/><circle cx="200" cy="150" r="40" fill="%23f0e68c" opacity="0.8"/><circle cx="950" cy="200" r="60" fill="%23f0e68c" opacity="0.7"/><circle cx="600" cy="100" r="30" fill="%23fff8dc" opacity="0.9"/></svg>');
             background-size: cover;
@@ -76,7 +73,6 @@
             animation: pulse 2.5s infinite;
         }
 
-        /* Navegación */
         nav {
             background: var(--dark);
             padding: 0.8rem 2rem;
@@ -108,14 +104,12 @@
             transform: scale(1.05);
         }
 
-        /* Contenedor principal */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1.5rem;
         }
 
-        /* Secciones */
         section {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(4px);
@@ -150,7 +144,6 @@
             gap: 10px;
         }
 
-        /* Grid de períodos */
         .periodos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -201,7 +194,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Tabla de datos */
         .tabla-datos {
             overflow-x: auto;
             margin: 2rem 0;
@@ -237,7 +229,6 @@
             background: #f5efde;
         }
 
-        /* Línea de tiempo interactiva */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -274,7 +265,6 @@
             font-weight: 500;
         }
 
-        /* Botón interactivo */
         .btn {
             background: var(--primary);
             color: white;
@@ -302,7 +292,6 @@
             background: #3f6e4b;
         }
 
-        /* Footer */
         footer {
             background: var(--dark);
             color: #ccc;
@@ -318,7 +307,6 @@
             text-decoration: none;
         }
 
-        /* Animaciones */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -347,7 +335,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Responsive */
         @media (max-width: 700px) {
             section {
                 padding: 1.5rem;
@@ -366,7 +353,6 @@
             }
         }
 
-        /* Tooltip / mensaje emergente */
         .tooltip {
             position: fixed;
             bottom: 30px;
@@ -399,7 +385,6 @@
             background: #a8743e;
         }
 
-        /* Lista de curiosidades */
         .curiosidades-lista {
             list-style: none;
             margin-top: 1.5rem;
@@ -432,14 +417,12 @@
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <h1>PALEOZOICO</h1>
         <p>La era de la vida antigua · 541 – 251 millones de años atrás</p>
         <div class="header-badge">🌍 Explosión de vida · Fósiles · Glaciaciones</div>
     </header>
 
-    <!-- NAVEGACIÓN -->
     <nav>
         <a href="#historia">Historia</a>
         <a href="#periodos">Períodos</a>
@@ -448,17 +431,14 @@
         <a href="#timeline">Línea temporal</a>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <div class="container">
 
-        <!-- SECCIÓN HISTORIA -->
         <section id="historia">
             <h2>📜 Historia del Paleozoico</h2>
             <p>El <strong>Paleozoico</strong> (del griego <em>palaiós</em> = antiguo y <em>zōḗ</em> = vida) es la primera era del eón Fanerozoico. Se extiende desde hace aproximadamente <strong>541 millones de años</strong> hasta hace <strong>251 millones de años</strong>. Durante este vasto período, la Tierra experimentó transformaciones radicales: la vida emergió del mar y conquistó la tierra firme, aparecieron los primeros bosques, los anfibios, los reptiles y los insectos gigantes. También ocurrieron varias extinciones masivas, incluida la mayor de todas, la extinción del Pérmico-Triásico.</p>
             <p>El Paleozoico se divide en seis períodos: <strong>Cámbrico, Ordovícico, Silúrico, Devónico, Carbonífero y Pérmico</strong>. Cada uno trajo innovaciones evolutivas y cambios climáticos drásticos. Al final de esta era, los continentes se unieron formando el supercontinente <strong>Pangea</strong>, y la vida sufrió un golpe casi fatal del que solo sobrevivió el 4% de las especies marinas.</p>
         </section>
 
-        <!-- SECCIÓN PERIODOS (GRID INTERACTIVO) -->
         <section id="periodos">
             <h2>⏳ Los seis períodos</h2>
             <div class="periodos-grid" id="gridPeriodos">
@@ -467,7 +447,6 @@
             <p style="text-align: center; margin-top: 1rem; font-style: italic; color: #5a4a2a;">Haz clic en cualquier tarjeta para ver un dato extra 👆</p>
         </section>
 
-        <!-- SECCIÓN DATOS CLAVE (TABLA) -->
         <section id="datos">
             <h2>📊 Datos clave del Paleozoico</h2>
             <div class="tabla-datos">
@@ -488,7 +467,6 @@
             <button class="btn" id="btnDato">🔍 Mostrar dato aleatorio</button>
         </section>
 
-        <!-- SECCIÓN CURIOSIDADES -->
         <section id="curiosidades">
             <h2>🧠 Curiosidades paleozoicas</h2>
             <ul class="curiosidades-lista" id="listaCuriosidades">
@@ -496,7 +474,6 @@
             </ul>
         </section>
 
-        <!-- LÍNEA TEMPORAL -->
         <section id="timeline">
             <h2>🕰️ Línea temporal interactiva</h2>
             <div class="timeline" id="timelineContainer">
@@ -504,38 +481,19 @@
             </div>
         </section>
 
-        <!-- Botón extra para interactuar (TypeScript-like) -->
         <div style="text-align: center;">
             <button class="btn btn-cta" id="btnPangea">🌐 ¿Sabes qué pasó con Pangea?</button>
         </div>
     </div>
 
-    <!-- Tooltip flotante -->
     <div class="tooltip" id="tooltip"></div>
 
-    <!-- FOOTER -->
     <footer>
         <p>🌿 Sitio educativo sobre el Paleozoico · Creado con HTML, CSS y JavaScript (simulando TypeScript) 🌿</p>
         <p style="margin-top: 0.8rem; font-size: 0.9rem;">© 2025 · Inspirado en la historia de la Tierra</p>
     </footer>
 
-    <!-- JAVASCRIPT (con tipado y estructura similar a TypeScript) -->
     <script>
-        // ============================================================
-        //  DATOS Y LÓGICA (estilo TypeScript con interfaces simuladas)
-        // ============================================================
-
-        /**
-         * Interfaz para un período geológico
-         * @typedef {Object} Periodo
-         * @property {string} nombre
-         * @property {string} rango
-         * @property {string} icono
-         * @property {string} descripcion
-         * @property {string} extra
-         */
-
-        /** @type {Periodo[]} */
         const periodosData = [
             { 
                 nombre: "Cámbrico", 
@@ -581,7 +539,6 @@
             }
         ];
 
-        // Datos para la línea de tiempo
         const timelineData = [
             { year: "541 Ma", evento: "Inicio del Cámbrico - Explosión de vida" },
             { year: "485 Ma", evento: "Primeros vertebrados sin mandíbula" },
@@ -592,7 +549,6 @@
             { year: "251 Ma", evento: "Extinción del Pérmico-Triásico (la Gran Mortandad)" }
         ];
 
-        // Curiosidades
         const curiosidades = [
             "El nombre 'Paleozoico' significa 'vida antigua' en griego.",
             "Durante el Cámbrico, la vida era exclusivamente marina.",
@@ -604,11 +560,6 @@
             "Los primeros reptiles aparecieron en el Carbonífero."
         ];
 
-        // ============================================================
-        //  RENDERIZADO DINÁMICO
-        // ============================================================
-
-        // 1. Generar tarjetas de períodos
         const gridPeriodos = document.getElementById('gridPeriodos');
         periodosData.forEach((p, index) => {
             const card = document.createElement('div');
@@ -620,14 +571,12 @@
                 <div class="rango">${p.rango}</div>
                 <p>${p.descripcion}</p>
             `;
-            // Evento click: muestra tooltip con dato extra
             card.addEventListener('click', () => {
                 mostrarTooltip(`<strong>${p.nombre}:</strong> ${p.extra}`);
             });
             gridPeriodos.appendChild(card);
         });
 
-        // 2. Generar lista de curiosidades
         const listaCuriosidades = document.getElementById('listaCuriosidades');
         curiosidades.forEach(c => {
             const li = document.createElement('li');
@@ -635,7 +584,6 @@
             listaCuriosidades.appendChild(li);
         });
 
-        // 3. Generar línea de tiempo
         const timelineContainer = document.getElementById('timelineContainer');
         timelineData.forEach(item => {
             const div = document.createElement('div');
@@ -647,18 +595,9 @@
             timelineContainer.appendChild(div);
         });
 
-        // ============================================================
-        //  INTERACTIVIDAD Y TOOLTIP
-        // ============================================================
-
-        // Elemento tooltip
         const tooltip = document.getElementById('tooltip');
         let tooltipTimeout = null;
 
-        /**
-         * Muestra un mensaje flotante
-         * @param {string} mensaje 
-         */
         function mostrarTooltip(mensaje) {
             if (tooltipTimeout) {
                 clearTimeout(tooltipTimeout);
@@ -670,7 +609,6 @@
             }, 3500);
         }
 
-        // Botón de dato aleatorio
         document.getElementById('btnDato').addEventListener('click', () => {
             const datos = [
                 "El Paleozoico duró unos 290 millones de años.",
@@ -685,16 +623,10 @@
             mostrarTooltip(`📘 ${random}`);
         });
 
-        // Botón Pangea
         document.getElementById('btnPangea').addEventListener('click', () => {
             mostrarTooltip('🌍 Pangea se formó a finales del Paleozoico y comenzó a fragmentarse en el Mesozoico.');
         });
 
-        // ============================================================
-        //  EFECTO EXTRA: SMOOTH SCROLL (ya está en CSS) y animaciones
-        // ============================================================
-
-        // Animación de aparición para secciones al hacer scroll
         const secciones = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -712,7 +644,6 @@
             observer.observe(sec);
         });
 
-        // Pequeño retraso para que las secciones ya visibles aparezcan
         window.addEventListener('load', () => {
             secciones.forEach(sec => {
                 const rect = sec.getBoundingClientRect();
@@ -722,9 +653,6 @@
                 }
             });
         });
-
-        // Simulación de tipado (TypeScript-like) usando JSDoc y verificación mental
-        // (El código es JS puro pero con anotaciones de tipos y estructura TS)
 
         console.log('Sitio Paleozoico cargado correctamente 🦕');
     </script>
