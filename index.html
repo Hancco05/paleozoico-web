@@ -1,1 +1,732 @@
-1
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paleozoico · La Era de la Vida Antigua</title>
+    <!-- Estilos CSS -->
+    <style>
+        /* Reset y variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2e5a3a;
+            --secondary: #8b5a2b;
+            --accent: #d4a373;
+            --dark: #1e2b1c;
+            --light: #f4f1de;
+            --text-dark: #2c2c2c;
+            --shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: linear-gradient(145deg, #f0ede0 0%, #e0dcc8 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header con efecto parallax */
+        header {
+            background: linear-gradient(rgba(20, 40, 20, 0.75), rgba(30, 50, 30, 0.85)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600"><rect width="1200" height="600" fill="%233a5e3a"/><path d="M0 400 Q150 350 300 380 T600 340 T900 370 T1200 330 L1200 600 L0 600 Z" fill="%232e4a2e" opacity="0.6"/><path d="M0 450 Q200 420 400 460 T800 430 T1200 470 L1200 600 L0 600 Z" fill="%231e3a1e" opacity="0.7"/><circle cx="200" cy="150" r="40" fill="%23f0e68c" opacity="0.8"/><circle cx="950" cy="200" r="60" fill="%23f0e68c" opacity="0.7"/><circle cx="600" cy="100" r="30" fill="%23fff8dc" opacity="0.9"/></svg>');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem 4rem;
+            position: relative;
+            border-bottom: 8px solid var(--secondary);
+        }
+
+        header h1 {
+            font-size: clamp(2.8rem, 8vw, 5rem);
+            text-shadow: 4px 4px 0 #1a2a1a, 8px 8px 0 rgba(0,0,0,0.3);
+            letter-spacing: 4px;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1.2s ease;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            text-shadow: 2px 2px 0 #1a2a1a;
+            font-style: italic;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(212, 163, 115, 0.9);
+            color: #1e2b1c;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            border: 2px solid #fff8dc;
+            box-shadow: var(--shadow);
+            animation: pulse 2.5s infinite;
+        }
+
+        /* Navegación */
+        nav {
+            background: var(--dark);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: scale(1.05);
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Secciones */
+        section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            border-radius: 30px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(139, 90, 43, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            border-left: 12px solid var(--secondary);
+            padding-left: 1.5rem;
+            margin-bottom: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Grid de períodos */
+        .periodos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .periodo-card {
+            background: linear-gradient(145deg, #fff8e7, #efe5d5);
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 8px 0 var(--secondary), 0 12px 20px rgba(0,0,0,0.15);
+            border: 1px solid #d4b68a;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .periodo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 0 var(--secondary), 0 18px 28px rgba(0,0,0,0.2);
+        }
+
+        .periodo-card h4 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .periodo-card .rango {
+            font-weight: 700;
+            color: var(--secondary);
+            background: #e6d8b5;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .periodo-card p {
+            font-size: 1rem;
+            color: #3a3a3a;
+        }
+
+        .periodo-card .icono {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tabla de datos */
+        .tabla-datos {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fefcf5;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        td, th {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #d0c8b0;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background: #f5efde;
+        }
+
+        /* Línea de tiempo interactiva */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: #f5efde;
+            padding: 1rem 1.8rem;
+            border-radius: 60px;
+            border-left: 14px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            background: #e6dcc4;
+            transform: translateX(10px);
+        }
+
+        .timeline-item .year {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--secondary);
+            min-width: 140px;
+        }
+
+        .timeline-item .evento {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Botón interactivo */
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 0 #1a2e1a;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1rem 0;
+        }
+
+        .btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #1a2e1a;
+        }
+
+        .btn:hover {
+            background: #3f6e4b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 6px solid var(--accent);
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            section {
+                padding: 1.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                border-radius: 30px;
+            }
+            .timeline-item .year {
+                min-width: auto;
+            }
+        }
+
+        /* Tooltip / mensaje emergente */
+        .tooltip {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--dark);
+            color: var(--light);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-left: 8px solid var(--accent);
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            pointer-events: none;
+            z-index: 1000;
+            max-width: 300px;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-cta {
+            background: var(--secondary);
+            box-shadow: 0 6px 0 #5a3a1a;
+        }
+        .btn-cta:hover {
+            background: #a8743e;
+        }
+
+        /* Lista de curiosidades */
+        .curiosidades-lista {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .curiosidades-lista li {
+            background: #e9e1cc;
+            margin: 0.8rem 0;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-left: 8px solid var(--primary);
+            transition: 0.2s;
+            cursor: default;
+        }
+
+        .curiosidades-lista li:hover {
+            background: #ddd2b8;
+            transform: scale(1.01);
+        }
+
+        .curiosidades-lista li::before {
+            content: "🦕";
+            font-size: 1.6rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>PALEOZOICO</h1>
+        <p>La era de la vida antigua · 541 – 251 millones de años atrás</p>
+        <div class="header-badge">🌍 Explosión de vida · Fósiles · Glaciaciones</div>
+    </header>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <a href="#historia">Historia</a>
+        <a href="#periodos">Períodos</a>
+        <a href="#datos">Datos clave</a>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#timeline">Línea temporal</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+
+        <!-- SECCIÓN HISTORIA -->
+        <section id="historia">
+            <h2>📜 Historia del Paleozoico</h2>
+            <p>El <strong>Paleozoico</strong> (del griego <em>palaiós</em> = antiguo y <em>zōḗ</em> = vida) es la primera era del eón Fanerozoico. Se extiende desde hace aproximadamente <strong>541 millones de años</strong> hasta hace <strong>251 millones de años</strong>. Durante este vasto período, la Tierra experimentó transformaciones radicales: la vida emergió del mar y conquistó la tierra firme, aparecieron los primeros bosques, los anfibios, los reptiles y los insectos gigantes. También ocurrieron varias extinciones masivas, incluida la mayor de todas, la extinción del Pérmico-Triásico.</p>
+            <p>El Paleozoico se divide en seis períodos: <strong>Cámbrico, Ordovícico, Silúrico, Devónico, Carbonífero y Pérmico</strong>. Cada uno trajo innovaciones evolutivas y cambios climáticos drásticos. Al final de esta era, los continentes se unieron formando el supercontinente <strong>Pangea</strong>, y la vida sufrió un golpe casi fatal del que solo sobrevivió el 4% de las especies marinas.</p>
+        </section>
+
+        <!-- SECCIÓN PERIODOS (GRID INTERACTIVO) -->
+        <section id="periodos">
+            <h2>⏳ Los seis períodos</h2>
+            <div class="periodos-grid" id="gridPeriodos">
+                <!-- Las tarjetas se generan con JavaScript (mejor rendimiento y contenido dinámico) -->
+            </div>
+            <p style="text-align: center; margin-top: 1rem; font-style: italic; color: #5a4a2a;">Haz clic en cualquier tarjeta para ver un dato extra 👆</p>
+        </section>
+
+        <!-- SECCIÓN DATOS CLAVE (TABLA) -->
+        <section id="datos">
+            <h2>📊 Datos clave del Paleozoico</h2>
+            <div class="tabla-datos">
+                <table>
+                    <thead>
+                        <tr><th>Período</th><th>Duración (Ma)</th><th>Evento destacado</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cámbrico</td><td>541 – 485</td><td>Explosión cámbrica: aparición de casi todos los filos animales</td></tr>
+                        <tr><td>Ordovícico</td><td>485 – 444</td><td>Primeros peces sin mandíbula, gran diversificación marina</td></tr>
+                        <tr><td>Silúrico</td><td>444 – 419</td><td>Conquista de la tierra por plantas y artrópodos</td></tr>
+                        <tr><td>Devónico</td><td>419 – 359</td><td>Edad de los peces y primeros anfibios</td></tr>
+                        <tr><td>Carbonífero</td><td>359 – 299</td><td>Grandes bosques de helechos, insectos gigantes, reptiles primitivos</td></tr>
+                        <tr><td>Pérmico</td><td>299 – 251</td><td>Formación de Pangea y la mayor extinción masiva</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn" id="btnDato">🔍 Mostrar dato aleatorio</button>
+        </section>
+
+        <!-- SECCIÓN CURIOSIDADES -->
+        <section id="curiosidades">
+            <h2>🧠 Curiosidades paleozoicas</h2>
+            <ul class="curiosidades-lista" id="listaCuriosidades">
+                <!-- Generado con JS -->
+            </ul>
+        </section>
+
+        <!-- LÍNEA TEMPORAL -->
+        <section id="timeline">
+            <h2>🕰️ Línea temporal interactiva</h2>
+            <div class="timeline" id="timelineContainer">
+                <!-- Generado con JS -->
+            </div>
+        </section>
+
+        <!-- Botón extra para interactuar (TypeScript-like) -->
+        <div style="text-align: center;">
+            <button class="btn btn-cta" id="btnPangea">🌐 ¿Sabes qué pasó con Pangea?</button>
+        </div>
+    </div>
+
+    <!-- Tooltip flotante -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>🌿 Sitio educativo sobre el Paleozoico · Creado con HTML, CSS y JavaScript (simulando TypeScript) 🌿</p>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem;">© 2025 · Inspirado en la historia de la Tierra</p>
+    </footer>
+
+    <!-- JAVASCRIPT (con tipado y estructura similar a TypeScript) -->
+    <script>
+        // ============================================================
+        //  DATOS Y LÓGICA (estilo TypeScript con interfaces simuladas)
+        // ============================================================
+
+        /**
+         * Interfaz para un período geológico
+         * @typedef {Object} Periodo
+         * @property {string} nombre
+         * @property {string} rango
+         * @property {string} icono
+         * @property {string} descripcion
+         * @property {string} extra
+         */
+
+        /** @type {Periodo[]} */
+        const periodosData = [
+            { 
+                nombre: "Cámbrico", 
+                rango: "541 – 485 Ma", 
+                icono: "🦠", 
+                descripcion: "Explosión cámbrica: aparecen la mayoría de los filos animales.",
+                extra: "🌊 En el Cámbrico ya existían los trilobites, que dominaron los mares."
+            },
+            { 
+                nombre: "Ordovícico", 
+                rango: "485 – 444 Ma", 
+                icono: "🐚", 
+                descripcion: "Gran diversificación de invertebrados marinos y primeros peces.",
+                extra: "🐟 Los primeros vertebrados eran peces sin mandíbula (ostracodermos)."
+            },
+            { 
+                nombre: "Silúrico", 
+                rango: "444 – 419 Ma", 
+                icono: "🌿", 
+                descripcion: "Las plantas y los artrópodos colonizan la tierra firme.",
+                extra: "🕷️ Los primeros animales terrestres fueron milpiés y escorpiones."
+            },
+            { 
+                nombre: "Devónico", 
+                rango: "419 – 359 Ma", 
+                icono: "🐟", 
+                descripcion: "Edad de los peces. Aparecen los primeros anfibios.",
+                extra: "🐸 El Tiktaalik fue un fósil clave entre pez y anfibio."
+            },
+            { 
+                nombre: "Carbonífero", 
+                rango: "359 – 299 Ma", 
+                icono: "🌳", 
+                descripcion: "Grandes bosques pantanosos, insectos gigantes y reptiles.",
+                extra: "🦗 Libélulas del tamaño de un halcón (Meganeura)."
+            },
+            { 
+                nombre: "Pérmico", 
+                rango: "299 – 251 Ma", 
+                icono: "🌋", 
+                descripcion: "Formación de Pangea y la mayor extinción masiva.",
+                extra: "💀 Se extinguieron el 96% de las especies marinas."
+            }
+        ];
+
+        // Datos para la línea de tiempo
+        const timelineData = [
+            { year: "541 Ma", evento: "Inicio del Cámbrico - Explosión de vida" },
+            { year: "485 Ma", evento: "Primeros vertebrados sin mandíbula" },
+            { year: "444 Ma", evento: "Extinción masiva del Ordovícico-Silúrico" },
+            { year: "419 Ma", evento: "Primeras plantas vasculares en tierra" },
+            { year: "359 Ma", evento: "Extinción del Devónico tardío" },
+            { year: "300 Ma", evento: "Grandes bosques carboníferos" },
+            { year: "251 Ma", evento: "Extinción del Pérmico-Triásico (la Gran Mortandad)" }
+        ];
+
+        // Curiosidades
+        const curiosidades = [
+            "El nombre 'Paleozoico' significa 'vida antigua' en griego.",
+            "Durante el Cámbrico, la vida era exclusivamente marina.",
+            "Los primeros bosques aparecieron en el Devónico, hace 380 Ma.",
+            "En el Carbonífero, el oxígeno atmosférico alcanzó el 35% (hoy 21%).",
+            "El supercontinente Pangea se formó al final del Paleozoico.",
+            "La extinción del Pérmico eliminó al 96% de las especies marinas.",
+            "Los trilobites, icono del Paleozoico, se extinguieron al final de la era.",
+            "Los primeros reptiles aparecieron en el Carbonífero."
+        ];
+
+        // ============================================================
+        //  RENDERIZADO DINÁMICO
+        // ============================================================
+
+        // 1. Generar tarjetas de períodos
+        const gridPeriodos = document.getElementById('gridPeriodos');
+        periodosData.forEach((p, index) => {
+            const card = document.createElement('div');
+            card.className = 'periodo-card';
+            card.setAttribute('data-index', index);
+            card.innerHTML = `
+                <div class="icono">${p.icono}</div>
+                <h4>${p.nombre}</h4>
+                <div class="rango">${p.rango}</div>
+                <p>${p.descripcion}</p>
+            `;
+            // Evento click: muestra tooltip con dato extra
+            card.addEventListener('click', () => {
+                mostrarTooltip(`<strong>${p.nombre}:</strong> ${p.extra}`);
+            });
+            gridPeriodos.appendChild(card);
+        });
+
+        // 2. Generar lista de curiosidades
+        const listaCuriosidades = document.getElementById('listaCuriosidades');
+        curiosidades.forEach(c => {
+            const li = document.createElement('li');
+            li.textContent = c;
+            listaCuriosidades.appendChild(li);
+        });
+
+        // 3. Generar línea de tiempo
+        const timelineContainer = document.getElementById('timelineContainer');
+        timelineData.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'timeline-item';
+            div.innerHTML = `
+                <span class="year">${item.year}</span>
+                <span class="evento">${item.evento}</span>
+            `;
+            timelineContainer.appendChild(div);
+        });
+
+        // ============================================================
+        //  INTERACTIVIDAD Y TOOLTIP
+        // ============================================================
+
+        // Elemento tooltip
+        const tooltip = document.getElementById('tooltip');
+        let tooltipTimeout = null;
+
+        /**
+         * Muestra un mensaje flotante
+         * @param {string} mensaje 
+         */
+        function mostrarTooltip(mensaje) {
+            if (tooltipTimeout) {
+                clearTimeout(tooltipTimeout);
+            }
+            tooltip.innerHTML = mensaje;
+            tooltip.classList.add('show');
+            tooltipTimeout = setTimeout(() => {
+                tooltip.classList.remove('show');
+            }, 3500);
+        }
+
+        // Botón de dato aleatorio
+        document.getElementById('btnDato').addEventListener('click', () => {
+            const datos = [
+                "El Paleozoico duró unos 290 millones de años.",
+                "Los continentes se movieron y chocaron formando Pangea.",
+                "Los primeros árboles aparecieron en el Devónico.",
+                "Los insectos gigantes vivieron en el Carbonífero.",
+                "La extinción del Pérmico fue causada por erupciones volcánicas masivas.",
+                "Los fósiles del Paleozoico se encuentran en rocas sedimentarias.",
+                "Los mares del Paleozoico eran ricos en braquiópodos y crinoideos."
+            ];
+            const random = datos[Math.floor(Math.random() * datos.length)];
+            mostrarTooltip(`📘 ${random}`);
+        });
+
+        // Botón Pangea
+        document.getElementById('btnPangea').addEventListener('click', () => {
+            mostrarTooltip('🌍 Pangea se formó a finales del Paleozoico y comenzó a fragmentarse en el Mesozoico.');
+        });
+
+        // ============================================================
+        //  EFECTO EXTRA: SMOOTH SCROLL (ya está en CSS) y animaciones
+        // ============================================================
+
+        // Animación de aparición para secciones al hacer scroll
+        const secciones = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        secciones.forEach(sec => {
+            sec.style.opacity = 0;
+            sec.style.transform = 'translateY(30px)';
+            sec.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(sec);
+        });
+
+        // Pequeño retraso para que las secciones ya visibles aparezcan
+        window.addEventListener('load', () => {
+            secciones.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    sec.style.opacity = 1;
+                    sec.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Simulación de tipado (TypeScript-like) usando JSDoc y verificación mental
+        // (El código es JS puro pero con anotaciones de tipos y estructura TS)
+
+        console.log('Sitio Paleozoico cargado correctamente 🦕');
+    </script>
+</body>
+</html>
