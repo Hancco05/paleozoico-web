@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paleozoico · La Era de la Vida Antigua</title>
+    <meta name="description" content="Sitio web educativo completo sobre el Paleozoico: historia, períodos, evolución, extinciones y geología.">
     <style>
+        /* Reset y variables */
         * {
             margin: 0;
             padding: 0;
@@ -13,22 +15,25 @@
 
         :root {
             --primary: #2e5a3a;
+            --primary-light: #4a7c59;
             --secondary: #8b5a2b;
             --accent: #d4a373;
             --dark: #1e2b1c;
             --light: #f4f1de;
             --text-dark: #2c2c2c;
             --shadow: 0 8px 20px rgba(0,0,0,0.2);
+            --shadow-heavy: 0 12px 30px rgba(0,0,0,0.35);
         }
 
         body {
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
             background: linear-gradient(145deg, #f0ede0 0%, #e0dcc8 100%);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
             scroll-behavior: smooth;
         }
 
+        /* ===== HEADER ===== */
         header {
             background: linear-gradient(rgba(20, 40, 20, 0.75), rgba(30, 50, 30, 0.85)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600"><rect width="1200" height="600" fill="%233a5e3a"/><path d="M0 400 Q150 350 300 380 T600 340 T900 370 T1200 330 L1200 600 L0 600 Z" fill="%232e4a2e" opacity="0.6"/><path d="M0 450 Q200 420 400 460 T800 430 T1200 470 L1200 600 L0 600 Z" fill="%231e3a1e" opacity="0.7"/><circle cx="200" cy="150" r="40" fill="%23f0e68c" opacity="0.8"/><circle cx="950" cy="200" r="60" fill="%23f0e68c" opacity="0.7"/><circle cx="600" cy="100" r="30" fill="%23fff8dc" opacity="0.9"/></svg>');
             background-size: cover;
@@ -52,7 +57,7 @@
 
         header p {
             font-size: 1.5rem;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 2rem;
             text-shadow: 2px 2px 0 #1a2a1a;
             font-style: italic;
@@ -73,16 +78,17 @@
             animation: pulse 2.5s infinite;
         }
 
+        /* ===== NAV ===== */
         nav {
             background: var(--dark);
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 0.8rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             border-bottom: 3px solid var(--accent);
         }
@@ -91,11 +97,11 @@
             color: var(--light);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.9rem;
             border-radius: 30px;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
         nav a:hover {
@@ -104,14 +110,16 @@
             transform: scale(1.05);
         }
 
+        /* ===== CONTAINER ===== */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1.5rem;
         }
 
+        /* ===== SECCIONES ===== */
         section {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(4px);
             border-radius: 30px;
             padding: 2rem 2.5rem;
@@ -122,11 +130,11 @@
         }
 
         section:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             color: var(--primary);
             border-left: 12px solid var(--secondary);
             padding-left: 1.5rem;
@@ -137,16 +145,49 @@
 
         h3 {
             color: var(--secondary);
-            font-size: 1.8rem;
-            margin: 1.5rem 0 1rem;
+            font-size: 1.6rem;
+            margin: 1.8rem 0 1rem;
             display: flex;
             align-items: center;
             gap: 10px;
+            border-bottom: 2px dashed #d4b68a;
+            padding-bottom: 0.5rem;
         }
 
+        h4 {
+            color: var(--primary-light);
+            font-size: 1.25rem;
+            margin: 1.2rem 0 0.6rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        strong {
+            color: var(--primary);
+        }
+
+        em {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1.02rem;
+        }
+
+        /* ===== PERIODOS GRID ===== */
         .periodos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -168,7 +209,7 @@
         }
 
         .periodo-card h4 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
@@ -185,8 +226,9 @@
         }
 
         .periodo-card p {
-            font-size: 1rem;
-            color: #3a3a3a;
+            font-size: 0.98rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
         }
 
         .periodo-card .icono {
@@ -194,30 +236,101 @@
             margin-bottom: 0.5rem;
         }
 
+        /* ===== ACORDEÓN (para períodos detallados) ===== */
+        .acordeon {
+            margin: 1.5rem 0;
+        }
+
+        .acordeon-item {
+            background: #f9f5e9;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-left: 6px solid var(--primary);
+        }
+
+        .acordeon-header {
+            background: linear-gradient(90deg, #e8dfc8, #f4efe0);
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .acordeon-header:hover {
+            background: linear-gradient(90deg, #ddd2b4, #ebe3cc);
+        }
+
+        .acordeon-header .rango-badge {
+            background: var(--secondary);
+            color: white;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-left: 1rem;
+            font-weight: 600;
+        }
+
+        .acordeon-header::after {
+            content: "▼";
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+            margin-left: auto;
+            color: var(--secondary);
+        }
+
+        .acordeon-item.active .acordeon-header::after {
+            transform: rotate(180deg);
+        }
+
+        .acordeon-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease;
+            padding: 0 1.5rem;
+        }
+
+        .acordeon-item.active .acordeon-content {
+            max-height: 6000px;
+            padding: 1.2rem 1.5rem 1.8rem;
+        }
+
+        .acordeon-content p, .acordeon-content ul, .acordeon-content h4 {
+            margin-top: 0.8rem;
+        }
+
+        /* ===== TABLA ===== */
         .tabla-datos {
             overflow-x: auto;
             margin: 2rem 0;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             background: #fefcf5;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 500px;
         }
 
         th {
             background: var(--primary);
             color: white;
             padding: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            text-align: left;
         }
 
         td, th {
             padding: 0.9rem 1rem;
-            text-align: left;
             border-bottom: 1px solid #d0c8b0;
         }
 
@@ -229,10 +342,15 @@
             background: #f5efde;
         }
 
+        tr:hover {
+            background: #ece4ce;
+        }
+
+        /* ===== TIMELINE ===== */
         .timeline {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.2rem;
             margin: 2rem 0;
         }
 
@@ -255,22 +373,23 @@
 
         .timeline-item .year {
             font-weight: 800;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--secondary);
-            min-width: 140px;
+            min-width: 120px;
         }
 
         .timeline-item .evento {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 500;
         }
 
+        /* ===== BOTÓN ===== */
         .btn {
             background: var(--primary);
             color: white;
             border: none;
             padding: 0.9rem 2rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 700;
@@ -280,7 +399,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            margin: 1rem 0;
+            margin: 1rem 0.5rem;
         }
 
         .btn:active {
@@ -289,92 +408,7 @@
         }
 
         .btn:hover {
-            background: #3f6e4b;
-        }
-
-        footer {
-            background: var(--dark);
-            color: #ccc;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 6px solid var(--accent);
-            font-size: 1rem;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @media (max-width: 700px) {
-            section {
-                padding: 1.5rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
-            .timeline-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-                border-radius: 30px;
-            }
-            .timeline-item .year {
-                min-width: auto;
-            }
-        }
-
-        .tooltip {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--dark);
-            color: var(--light);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border-left: 8px solid var(--accent);
-            font-weight: 600;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            pointer-events: none;
-            z-index: 1000;
-            max-width: 300px;
-        }
-
-        .tooltip.show {
-            opacity: 1;
-            transform: translateY(0);
+            background: var(--primary-light);
         }
 
         .btn-cta {
@@ -385,9 +419,11 @@
             background: #a8743e;
         }
 
+        /* ===== CURIOSIDADES ===== */
         .curiosidades-lista {
             list-style: none;
             margin-top: 1.5rem;
+            margin-left: 0;
         }
 
         .curiosidades-lista li {
@@ -395,13 +431,12 @@
             margin: 0.8rem 0;
             padding: 1rem 1.5rem;
             border-radius: 16px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             display: flex;
             align-items: center;
             gap: 1rem;
             border-left: 8px solid var(--primary);
             transition: 0.2s;
-            cursor: default;
         }
 
         .curiosidades-lista li:hover {
@@ -411,62 +446,420 @@
 
         .curiosidades-lista li::before {
             content: "🦕";
-            font-size: 1.6rem;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== TARJETAS DE DATOS (grid info) ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #e8f0e3, #d5e3cc);
+            border-radius: 18px;
+            padding: 1.5rem;
+            border-top: 6px solid var(--primary);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .info-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+            font-size: 1.15rem;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: #ccc;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+            border-top: 6px solid var(--accent);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== TOOLTIP ===== */
+        .tooltip {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--dark);
+            color: var(--light);
+            padding: 1rem 1.8rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-left: 8px solid var(--accent);
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            pointer-events: none;
+            z-index: 1000;
+            max-width: 350px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== ANIMACIONES ===== */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            section { padding: 1.5rem; }
+            h2 { font-size: 1.6rem; padding-left: 1rem; }
+            h3 { font-size: 1.3rem; }
+            .timeline-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; border-radius: 30px; }
+            .timeline-item .year { min-width: auto; }
+            header { padding: 3rem 1rem 2.5rem; }
+            header p { font-size: 1.1rem; }
+            nav { gap: 0.4rem; }
+            nav a { font-size: 0.85rem; padding: 0.4rem 0.7rem; }
+        }
+
+        /* ===== BOTÓN VOLVER ARRIBA ===== */
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-top.show {
+            opacity: 1;
+        }
+
+        .back-top:hover {
+            background: var(--primary-light);
+            transform: scale(1.1);
+        }
+
+        /* ===== INDICE INTERACTIVO (chips) ===== */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1rem 0 2rem;
+        }
+
+        .chip {
+            background: #e8dfc8;
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            border: 1px solid #c9b88a;
+            cursor: pointer;
+        }
+
+        .chip:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ===== CITA DESTACADA ===== */
+        .cita {
+            background: #eef3e8;
+            border-left: 8px solid var(--primary);
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            border-radius: 0 16px 16px 0;
+            font-style: italic;
+            color: #3a4a3a;
+            font-size: 1.05rem;
         }
     </style>
 </head>
 <body>
 
+    <!-- ============ HEADER ============ -->
     <header>
         <h1>PALEOZOICO</h1>
         <p>La era de la vida antigua · 541 – 251 millones de años atrás</p>
-        <div class="header-badge">🌍 Explosión de vida · Fósiles · Glaciaciones</div>
+        <div class="header-badge">🌍 Explosión de vida · Fósiles · Glaciaciones · Pangea</div>
     </header>
 
+    <!-- ============ NAVEGACIÓN ============ -->
     <nav>
-        <a href="#historia">Historia</a>
+        <a href="#introduccion">Introducción</a>
         <a href="#periodos">Períodos</a>
-        <a href="#datos">Datos clave</a>
+        <a href="#geologia">Geología</a>
+        <a href="#clima">Clima</a>
+        <a href="#evolucion">Evolución</a>
+        <a href="#extinciones">Extinciones</a>
+        <a href="#fosiles">Fósiles</a>
         <a href="#curiosidades">Curiosidades</a>
-        <a href="#timeline">Línea temporal</a>
     </nav>
 
     <div class="container">
 
-        <section id="historia">
-            <h2>📜 Historia del Paleozoico</h2>
-            <p>El <strong>Paleozoico</strong> (del griego <em>palaiós</em> = antiguo y <em>zōḗ</em> = vida) es la primera era del eón Fanerozoico. Se extiende desde hace aproximadamente <strong>541 millones de años</strong> hasta hace <strong>251 millones de años</strong>. Durante este vasto período, la Tierra experimentó transformaciones radicales: la vida emergió del mar y conquistó la tierra firme, aparecieron los primeros bosques, los anfibios, los reptiles y los insectos gigantes. También ocurrieron varias extinciones masivas, incluida la mayor de todas, la extinción del Pérmico-Triásico.</p>
-            <p>El Paleozoico se divide en seis períodos: <strong>Cámbrico, Ordovícico, Silúrico, Devónico, Carbonífero y Pérmico</strong>. Cada uno trajo innovaciones evolutivas y cambios climáticos drásticos. Al final de esta era, los continentes se unieron formando el supercontinente <strong>Pangea</strong>, y la vida sufrió un golpe casi fatal del que solo sobrevivió el 4% de las especies marinas.</p>
-        </section>
+        <!-- ============ INTRODUCCIÓN ============ -->
+        <section id="introduccion">
+            <h2>📜 Introducción al Paleozoico</h2>
+            <p>El <strong>Paleozoico</strong> (del griego <em>palaiós</em> = antiguo y <em>zōḗ</em> = vida) es la primera era del eón Fanerozoico. Se extiende desde hace aproximadamente <strong>541 millones de años</strong> hasta hace <strong>251 millones de años</strong>, abarcando unos <strong>290 millones de años</strong>, más de la mitad de todo el Fanerozoico.</p>
 
-        <section id="periodos">
-            <h2>⏳ Los seis períodos</h2>
-            <div class="periodos-grid" id="gridPeriodos">
-                <!-- Las tarjetas se generan con JavaScript (mejor rendimiento y contenido dinámico) -->
+            <p>Este período geológico tiene una importancia capital en la historia de la Tierra: <strong>casi todos los grupos de animales modernos aparecieron en él</strong>, la vida conquistó la tierra firme, se formaron los primeros bosques, surgieron los anfibios, los reptiles y los insectos gigantes, y el planeta experimentó el ciclo completo de <strong>fragmentación y reunificación de los continentes</strong>. La era terminó con la mayor extinción masiva de todos los tiempos, la del <strong>Pérmico-Triásico</strong>, que eliminó al 96% de las especies marinas.</p>
+
+            <div class="cita">
+                "El Paleozoico es el gran laboratorio donde la vida ensayó todas sus formas antes de establecerse definitivamente en la tierra firme."
             </div>
-            <p style="text-align: center; margin-top: 1rem; font-style: italic; color: #5a4a2a;">Haz clic en cualquier tarjeta para ver un dato extra 👆</p>
+
+            <h3>Delimitación de la era</h3>
+            <p>El Paleozoico se sitúa entre el <strong>Neoproterozoico</strong> (última era del Precámbrico) y el <strong>Mesozoico</strong> (era de los dinosaurios). Su comienzo está marcado por la aparición de los primeros <strong>fósiles de esqueleto duro</strong> —como los pequeños conodontos— y su final coincide con la gran extinción del Pérmico.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🌋 Inicio</h4>
+                    <p>541 Ma · Aparición de los primeros animales con partes duras fosilizables: conodontos y pequeños moluscos.</p>
+                </div>
+                <div class="info-card">
+                    <h4>💀 Fin</h4>
+                    <p>251 Ma · La mayor extinción masiva conocida, causada por las erupciones de los traps siberianos.</p>
+                </div>
+                <div class="info-card">
+                    <h4>🗺️ Geografía</h4>
+                    <p>Comienza con la fragmentación de Pannotia y termina con la formación del supercontinente Pangea.</p>
+                </div>
+                <div class="info-card">
+                    <h4>🦠 Vida</h4>
+                    <p>De organismos marinos simples a los primeros reptiles y bosques de helechos gigantes.</p>
+                </div>
+            </div>
         </section>
 
-        <section id="datos">
-            <h2>📊 Datos clave del Paleozoico</h2>
+        <!-- ============ PERÍODOS ============ -->
+        <section id="periodos">
+            <h2>⏳ Los seis períodos del Paleozoico</h2>
+            <p>El Paleozoico se divide en seis períodos geológicos: <strong>Cámbrico, Ordovícico, Silúrico, Devónico, Carbonífero y Pérmico</strong>. Cada uno trajo innovaciones evolutivas, cambios climáticos y reconfiguraciones de los continentes.</p>
+
+            <!-- Tarjetas resumen -->
+            <div class="periodos-grid" id="gridPeriodos">
+                <!-- Generadas dinámicamente con JS -->
+            </div>
+
+            <h3>Detalle exhaustivo de cada período</h3>
+            <div class="acordeon" id="acordeonPeriodos">
+                <!-- Generado con JS -->
+            </div>
+        </section>
+
+        <!-- ============ GEOLOGÍA ============ -->
+        <section id="geologia">
+            <h2>🌍 Geología, placas y continentes</h2>
+            <p>El Paleozoico se caracteriza por un ciclo tectónico completo: comenzó con la <strong>fragmentación de la Pannotia</strong> (supercontinente neoproterozoico) y terminó con la <strong>formación de la Pangea</strong>, el mayor supercontinente conocido. Este ciclo condicionó la distribución de los mares, el clima y la evolución biológica.</p>
+
+            <h3>Continentes principales</h3>
+            <ul>
+                <li><strong>Gondwana:</strong> incluía Sudamérica, África, Arabia, India, Australia y la Antártida. Se situaba en el hemisferio sur y parte del hemisferio norte.</li>
+                <li><strong>Laurentia:</strong> núcleo del actual continente norteamericano.</li>
+                <li><strong>Báltica:</strong> actual Escandinavia y norte de Europa.</li>
+                <li><strong>Siberia:</strong> bloque siberiano independiente durante gran parte de la era.</li>
+                <li><strong>China del Norte y China del Sur:</strong> bloques que hoy forman parte de Asia oriental.</li>
+            </ul>
+
+            <h3>Los grandes océanos paleozoicos</h3>
+            <ul>
+                <li><strong>Océano de Iapetus:</strong> se abrió al final del Precámbrico, se cerró al inicio del Devónico (~400 Ma), marcando la unión de Laurentia con Báltica.</li>
+                <li><strong>Océano paleoasiático:</strong> se formó al final del Precámbrico y se cerró hacia el Ordovícico final (~450 Ma).</li>
+                <li><strong>Océano paleourálico:</strong> se abrió hacia ~500 Ma y se cerró al final del Paleozoico (240–230 Ma), uniendo Siberia con Europa del Este.</li>
+                <li><strong>Paleo-Tetis:</strong> se abrió entre el Ordovícico y el Silúrico (480–450 Ma), a medida que los bloques continentales se desprendían de Gondwana; fue el antecesor del Tetis mesozoico.</li>
+                <li><strong>Panthalassa:</strong> el gran océano global que rodeaba Pangea, con un único litoral continuo.</li>
+            </ul>
+
+            <h3>Orogenias principales</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Orogenia Caledónica</h4>
+                    <p>Silúrico–Devónico. Colisión de Laurentia, Báltica y Avalonia. Formó las montañas de Escandinavia, Escocia y norte de los Apalaches.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Orogenia Herciniana (Varisco)</h4>
+                    <p>Carbonífero–Pérmico. Colisión de Gondwana con Laurussia. Formó los Urales, los Apalaches meridionales y los montes de Europa central.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Orogenia Uraliana</h4>
+                    <p>Pérmico. Colisión del bloque siberiano con Europa del Este. Completó la consolidación de Pangea.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Consecuencias</h4>
+                    <p>Las orogenias elevaron enormes cordilleras, cambiaron el clima y conectaron masas continentales, permitiendo la dispersión de floras y faunas.</p>
+                </div>
+            </div>
+
+            <h3>El ciclo de formación de Pangea</h3>
+            <ol>
+                <li><strong>Fragmentación inicial (Cámbrico–Ordovícico):</strong> Pannotia se separa en Gondwana, Laurentia, Báltica y Siberia.</li>
+                <li><strong>Convergencia (Silúrico–Devónico):</strong> Laurentia y Báltica chocan formando Laurussia; Gondwana se aproxima.</li>
+                <li><strong>Colisión final (Carbonífero–Pérmico):</strong> Gondwana y Siberia se unen a Laurussia, creando Pangea.</li>
+                <li><strong>Resultado:</strong> un supercontinente en forma de "C" que abarcaba desde el polo sur hasta casi el polo norte, rodeado por el océano Panthalassa.</li>
+            </ol>
+        </section>
+
+        <!-- ============ CLIMA ============ -->
+        <section id="clima">
+            <h2>🌡️ Clima y ambiente a lo largo del Paleozoico</h2>
+            <p>El clima paleozoico experimentó variaciones notables: desde <strong>condiciones de invernadero</strong> hasta <strong>glaciaciones importantes</strong>, siempre moduladas por la posición de los continentes, los niveles de CO₂ y la circulación oceánica.</p>
+
             <div class="tabla-datos">
                 <table>
                     <thead>
-                        <tr><th>Período</th><th>Duración (Ma)</th><th>Evento destacado</th></tr>
+                        <tr><th>Período</th><th>Clima dominante</th><th>Eventos climáticos clave</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Cámbrico</td><td>541 – 485</td><td>Explosión cámbrica: aparición de casi todos los filos animales</td></tr>
-                        <tr><td>Ordovícico</td><td>485 – 444</td><td>Primeros peces sin mandíbula, gran diversificación marina</td></tr>
-                        <tr><td>Silúrico</td><td>444 – 419</td><td>Conquista de la tierra por plantas y artrópodos</td></tr>
-                        <tr><td>Devónico</td><td>419 – 359</td><td>Edad de los peces y primeros anfibios</td></tr>
-                        <tr><td>Carbonífero</td><td>359 – 299</td><td>Grandes bosques de helechos, insectos gigantes, reptiles primitivos</td></tr>
-                        <tr><td>Pérmico</td><td>299 – 251</td><td>Formación de Pangea y la mayor extinción masiva</td></tr>
+                        <tr><td>Cámbrico</td><td>Cálido, sin glaciares conocidos</td><td>Altos niveles de CO₂, efecto invernadero intenso</td></tr>
+                        <tr><td>Ordovícico</td><td>Cálido al inicio, frío al final</td><td>Glaciación gondwánica (Hirnantiense), caída del nivel del mar</td></tr>
+                        <tr><td>Silúrico</td><td>Recuperación tras la glaciación</td><td>Clima estable, cálido y húmedo; formación de arrecifes</td></tr>
+                        <tr><td>Devónico</td><td>Invernadero cálido y seco</td><td>Desertización continental; depósitos de evaporitas</td></tr>
+                        <tr><td>Carbonífero</td><td>Glaciaciones en Gondwana, trópicos húmedos</td><td>Oscilaciones glaciares-eustáticas; grandes turberas</td></tr>
+                        <tr><td>Pérmico</td><td>Arido y continental</td><td>Interior de Pangea con desiertos extremos; estrés biótico</td></tr>
                     </tbody>
                 </table>
             </div>
-            <button class="btn" id="btnDato">🔍 Mostrar dato aleatorio</button>
+
+            <h3>Factores climáticos determinantes</h3>
+            <ul>
+                <li><strong>Posición de los continentes:</strong> las masas terrestres en latitudes polares favorecen glaciaciones; las tropicales, climas cálidos.</li>
+                <li><strong>Nivel de CO₂ atmosférico:</strong> el vulcanismo y la meteorización de silicatos modifican su concentración.</li>
+                <li><strong>Corrientes oceánicas:</strong> la apertura y cierre de océanos cambió la circulación del calor.</li>
+                <li><strong>Cobertura vegetal:</strong> la expansión de plantas terrestres en el Devónico–Carbonífero aumentó el consumo de CO₂ y favoreció el enfriamiento.</li>
+            </ul>
         </section>
 
+        <!-- ============ EVOLUCIÓN ============ -->
+        <section id="evolucion">
+            <h2>🧬 Evolución de la vida en el Paleozoico</h2>
+            <p>La historia evolutiva del Paleozoico es la historia de cómo la vida pasó de <strong>pequeños organismos marinos</strong> a <strong>complejos ecosistemas terrestres</strong>, incluyendo los primeros vertebrados, plantas vasculares e insectos voladores.</p>
+
+            <h3>Principales hitos evolutivos</h3>
+
+            <h4>1. La explosión cámbrica</h4>
+            <p>En un intervalo de unos 20–25 millones de años, aparecieron casi todos los grandes grupos animales (filos) que conocemos hoy. Se diversificaron los <strong>artrópodos</strong> (trilobites), <strong>moluscos</strong>, <strong>braquiópodos</strong>, <strong>equinodermos</strong> y los primeros <strong>cordados</strong>. Este evento se documenta en yacimientos como el <strong>esquisto de Burgess</strong> (Canadá) y <strong>Chengjiang</strong> (China).</p>
+
+            <h4>2. Colonización del medio terrestre</h4>
+            <ul>
+                <li><strong>Plantas:</strong> las primeras plantas no vasculares (briófitos) aparecen en el Ordovícico; los <strong>helechos Cooksonia</strong> en el Silúrico son las plantas vasculares más antiguas conocidas.</li>
+                <li><strong>Artrópodos:</strong> milpiés, escorpiones y ácaros colonizan la tierra en el Silúrico–Devónico.</li>
+                <li><strong>Vertebrados:</strong> los <strong>tetrápodos</strong> (cuatro patas) surgen en el Devónico a partir de peces de aletas lobuladas como <strong>Tiktaalik</strong>.</li>
+            </ul>
+
+            <h4>3. El bosque carbonífero</h4>
+            <p>En el Carbonífero, extensas <strong>selvas tropicales</strong> cubrieron las tierras bajas ecuatoriales. Estaban dominadas por <strong>licopodios arborescentes</strong> (Lepidodendron, Sigillaria), <strong>equisetos gigantes</strong> (Calamites) y helechos con semilla (Medullosa). Estos bosques generaron los grandes depósitos de carbón que hoy explotamos.</p>
+
+            <h4>4. La radiación de los amniotas</h4>
+            <p>En el Carbonífero superior aparecen los primeros <strong>amniotas</strong>, vertebrados capaces de reproducirse fuera del agua gracias al huevo amniótico. Esto dio origen a los <strong>reptiles</strong>, que en el Pérmico se diversificaron enormemente, incluyendo los <strong>pelicosaurios</strong> (con vela dorsal) y los <strong>terápsidos</strong>, ancestros de los mamíferos.</p>
+
+            <h4>5. La crisis final</h4>
+            <p>La extinción del Pérmico-Triásico borró del mapa a muchos linajes, pero también abrió nichos ecológicos que serían ocupados por los dinosaurios en el Mesozoico.</p>
+        </section>
+
+        <!-- ============ EXTINCIONES ============ -->
+        <section id="extinciones">
+            <h2>💀 Las extinciones masivas del Paleozoico</h2>
+            <p>El Paleozoico estuvo jalonado por varias extinciones masivas, algunas de ellas entre las más severas de la historia de la Tierra.</p>
+
+            <div class="acordeon" id="acordeonExtinciones">
+                <!-- Generado dinámicamente -->
+            </div>
+
+            <h3>La Gran Mortandad (Pérmico-Triásico)</h3>
+            <p>La extinción de finales del Pérmico, hace unos 251 millones de años, fue el evento más catastrófico conocido. Se estima que desaparecieron:</p>
+            <ul>
+                <li><strong>96% de las especies marinas</strong></li>
+                <li><strong>70% de las especies terrestres</strong></li>
+                <li><strong>83% de los géneros</strong> de todos los organismos</li>
+            </ul>
+            <p>Los <strong>traps siberianos</strong>, una enorme provincia ígnea, liberaron millones de km³ de lava y gases como CO₂ y SO₂, desencadenando un calentamiento global extremo, lluvia ácida, anoxia oceánica y agotamiento del ozono. La recuperación de los ecosistemas tardó entre <strong>5 y 10 millones de años</strong>.</p>
+        </section>
+
+        <!-- ============ FÓSILES ============ -->
+        <section id="fosiles">
+            <h2>🦴 Yacimientos fosilíferos emblemáticos</h2>
+            <p>El Paleozoico cuenta con algunos de los <strong>Lagerstätten</strong> (yacimientos de conservación excepcional) más importantes del mundo, que nos permiten reconstruir la vida de la época con un detalle asombroso.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Esquisto de Burgess (Canadá)</h4>
+                    <p>Cámbrico medio (~508 Ma). Conserva partes blandas de artrópodos, gusanos y los primeros cordados. Es uno de los yacimientos más importantes del mundo.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Chengjiang (China)</h4>
+                    <p>Cámbrico inferior (~518 Ma). Famoso por sus embriones fosilizados y por ejemplares de <em>Myllokunmingia</em>, uno de los vertebrados más antiguos.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Rhynie Chert (Escocia)</h4>
+                    <p>Devónico inferior (~410 Ma). Conserva plantas terrestres primitivas, hongos, líquenes y artrópodos en sílex volcánico.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Mazon Creek (EE.UU.)</h4>
+                    <p>Carbonífero superior (~307 Ma). Nódulos con plantas, insectos, anfibios y medusas de cuerpo blando.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Joggins (Canadá)</h4>
+                    <p>Carbonífero (~315 Ma). Bosques fósiles <em>in situ</em> con troncos erectos y los primeros reptiles (Hylonomus).</p>
+                </div>
+                <div class="info-card">
+                    <h4>Monte San Giorgio (Suiza/Italia)</h4>
+                    <p>Triásico, pero clave para entender la recuperación tras la extinción del Pérmico.</p>
+                </div>
+            </div>
+
+            <h3>Fósiles guía y grupos característicos</h3>
+            <ul>
+                <li><strong>Trilobites:</strong> artrópodos marinos, abundantes en el Cámbrico–Ordovícico. Extintos al final del Pérmico.</li>
+                <li><strong>Graptolitos:</strong> coloniales planctónicos, excelentes para datar el Ordovícico–Silúrico.</li>
+                <li><strong>Ammonoideos:</strong> cefalópodos con concha espiral, muy útiles en bioestratigrafía del Devónico–Pérmico.</li>
+                <li><strong>Braquiópodos:</strong> organismos bentónicos con concha bivalva, dominantes en las plataformas paleozoicas.</li>
+                <li><strong>Crinoides:</strong> "lirios de mar", abundantes formadores de calizas en el Carbonífero.</li>
+                <li><strong>Corales tabulados y rugosos:</strong> principales constructores de arrecifes paleozoicos.</li>
+            </ul>
+        </section>
+
+        <!-- ============ CURIOSIDADES ============ -->
         <section id="curiosidades">
             <h2>🧠 Curiosidades paleozoicas</h2>
             <ul class="curiosidades-lista" id="listaCuriosidades">
@@ -474,97 +867,210 @@
             </ul>
         </section>
 
+        <!-- ============ LÍNEA TEMPORAL ============ -->
         <section id="timeline">
             <h2>🕰️ Línea temporal interactiva</h2>
             <div class="timeline" id="timelineContainer">
                 <!-- Generado con JS -->
             </div>
+            <div style="text-align: center;">
+                <button class="btn" id="btnDato">🔍 Mostrar dato aleatorio</button>
+                <button class="btn btn-cta" id="btnPangea">🌐 ¿Qué fue Pangea?</button>
+            </div>
         </section>
 
-        <div style="text-align: center;">
-            <button class="btn btn-cta" id="btnPangea">🌐 ¿Sabes qué pasó con Pangea?</button>
-        </div>
     </div>
 
+    <!-- Tooltip flotante -->
     <div class="tooltip" id="tooltip"></div>
 
+    <!-- Botón volver arriba -->
+    <button class="back-top" id="backTop" title="Volver arriba">↑</button>
+
+    <!-- ============ FOOTER ============ -->
     <footer>
-        <p>🌿 Sitio educativo sobre el Paleozoico · Creado con HTML, CSS y JavaScript (simulando TypeScript) 🌿</p>
-        <p style="margin-top: 0.8rem; font-size: 0.9rem;">© 2025 · Inspirado en la historia de la Tierra</p>
+        <p>🌿 Sitio educativo completo sobre el Paleozoico · HTML, CSS y JavaScript 🌿</p>
+        <p style="margin-top: 0.6rem; font-size: 0.9rem;">Información basada en fuentes científicas: UCMP Berkeley, USGS, Natural History Museum, ScienceDirect</p>
+        <p style="margin-top: 0.6rem; font-size: 0.85rem;">© 2025 · La Era de la Vida Antigua</p>
     </footer>
 
+    <!-- ============ JAVASCRIPT ============ -->
     <script>
+        // ============================================================
+        //  DATOS
+        // ============================================================
+
+        /**
+         * @typedef {Object} Periodo
+         * @property {string} nombre
+         * @property {string} rango
+         * @property {string} icono
+         * @property {string} descripcion
+         * @property {string} extra
+         * @property {string} detalle
+         */
+
+        /** @type {Periodo[]} */
         const periodosData = [
-            { 
-                nombre: "Cámbrico", 
-                rango: "541 – 485 Ma", 
-                icono: "🦠", 
+            {
+                nombre: "Cámbrico",
+                rango: "541 – 485 Ma",
+                icono: "🦠",
                 descripcion: "Explosión cámbrica: aparecen la mayoría de los filos animales.",
-                extra: "🌊 En el Cámbrico ya existían los trilobites, que dominaron los mares."
+                extra: "🌊 En el Cámbrico ya existían los trilobites, que dominaron los mares.",
+                detalle: `
+                    <h4>El gran estallido de la vida animal</h4>
+                    <p>El Cámbrico representa uno de los episodios más asombrosos de la historia biológica: en un intervalo relativamente corto, aparecieron representantes de la mayoría de los <strong>filos animales</strong> que existen hoy. Los mares estaban dominados por los <strong>trilobites</strong>, artrópodos con caparazón segmentado que conocemos por más de 17.000 especies fósiles. También vivían los <strong>radiodontos</strong>, como <em>Anomalocaris</em>, un depredador de más de medio metro con apéndices frontales espinosos.</p>
+                    <p>El yacimiento canadiense de <strong>Burgess Shale</strong> (Columbia Británica) y el chino de <strong>Chengjiang</strong> han proporcionado fósiles de cuerpo blando extraordinariamente conservados, mostrando ojos compuestos, branquias, intestinos y hasta embriones.</p>
+                    <p>En este período también aparecen los primeros <strong>cordados</strong> (como <em>Pikaia</em>), lo que convierte al Cámbrico en la raíz remota de nuestra propia estirpe.</p>
+                    <h4>Geografía y clima</h4>
+                    <p>Los continentes estaban dispersos. El nivel del mar era alto y extensas plataformas someras cubrían buena parte de los cratones. El clima era cálido, sin glaciares conocidos. La composición atmosférica tenía mucho más CO₂ que hoy.</p>
+                `
             },
-            { 
-                nombre: "Ordovícico", 
-                rango: "485 – 444 Ma", 
-                icono: "🐚", 
+            {
+                nombre: "Ordovícico",
+                rango: "485 – 444 Ma",
+                icono: "🐚",
                 descripcion: "Gran diversificación de invertebrados marinos y primeros peces.",
-                extra: "🐟 Los primeros vertebrados eran peces sin mandíbula (ostracodermos)."
+                extra: "🐟 Los primeros vertebrados eran peces sin mandíbula (ostracodermos).",
+                detalle: `
+                    <h4>La gran biodiversificación marina</h4>
+                    <p>El Ordovícico es considerado la mayor <strong>radiación biológica marina</strong> del Paleozoico. Se diversificaron los <strong>braquiópodos</strong>, los <strong>briozoos</strong>, los <strong>crinoideos</strong>, los <strong>corales</strong> y los <strong>cefalópodos</strong> (ortocónidos y nautiloideos). Los <strong>graptolitos</strong> alcanzaron su máximo esplendor y son hoy fósiles guía excelentes.</p>
+                    <p>Aparecen los primeros <strong>peces sin mandíbula</strong> (ostracodermos), cubiertos por placas óseas, que anteceden a todos los vertebrados actuales. También surgen los primeros <strong>arrecifes</strong> construidos por organismos y los primeros <strong>escorpiones marinos</strong> (euryptéridos), algunos de hasta 2 metros de longitud.</p>
+                    <h4>La primera glaciación del Fanerozoico</h4>
+                    <p>Hacia el final del Ordovícico, Gondwana se desplazó hacia el polo sur, desencadenando una <strong>glaciación continental</strong>. El nivel del mar cayó decenas de metros, desaparecieron vastas plataformas someras y se produjo la primera gran extinción del Paleozoico.</p>
+                    <p>Las plantas más primitivas ya podrían haber colonizado las zonas costeras, aunque los fósiles son escasos y consisten en esporas y fragmentos de cutícula.</p>
+                `
             },
-            { 
-                nombre: "Silúrico", 
-                rango: "444 – 419 Ma", 
-                icono: "🌿", 
+            {
+                nombre: "Silúrico",
+                rango: "444 – 419 Ma",
+                icono: "🌿",
                 descripcion: "Las plantas y los artrópodos colonizan la tierra firme.",
-                extra: "🕷️ Los primeros animales terrestres fueron milpiés y escorpiones."
+                extra: "🕷️ Los primeros animales terrestres fueron milpiés y escorpiones.",
+                detalle: `
+                    <h4>La conquista de la tierra firme</h4>
+                    <p>El Silúrico es testigo de uno de los episodios más decisivos: la <strong>colonización del medio terrestre</strong>. Plantas vasculares primitivas como <em>Cooksonia</em> desarrollan tallos con tejido conductor y esporangios terminales. Aparecen también los primeros <strong>hongos terrestres</strong> y posibles líquenes.</p>
+                    <p>Junto a las plantas, pequeños artrópodos —<strong>milpiés, escorpiones, ácaros</strong>— se aventuran en tierra. Algunos escorpiones alcanzan tallas notables y se convierten en los primeros grandes depredadores terrestres.</p>
+                    <h4>Recuperación climática y arrecifes</h4>
+                    <p>Tras la glaciación ordovícica, el clima se vuelve cálido y estable. Los mares someros vuelven a cubrir grandes extensiones y proliferan los <strong>arrecifes de coral</strong> y los <strong>estromatopóridos</strong>. Los peces sin mandíbula siguen diversificándose y aparecen los primeros <strong>peces con mandíbula</strong> incipientes.</p>
+                    <p>Las primeras plantas terrestres comienzan a influir en la <strong>meteorización de las rocas</strong> y en la formación de suelos, alterando el ciclo del carbono a escala global.</p>
+                `
             },
-            { 
-                nombre: "Devónico", 
-                rango: "419 – 359 Ma", 
-                icono: "🐟", 
+            {
+                nombre: "Devónico",
+                rango: "419 – 359 Ma",
+                icono: "🐟",
                 descripcion: "Edad de los peces. Aparecen los primeros anfibios.",
-                extra: "🐸 El Tiktaalik fue un fósil clave entre pez y anfibio."
+                extra: "🐸 El Tiktaalik fue un fósil clave entre pez y anfibio.",
+                detalle: `
+                    <h4>La edad de los peces</h4>
+                    <p>El Devónico es conocido como la <strong>"Edad de los Peces"</strong>. Se diversifican los <strong>placodermos</strong> (peces acorazados), los <strong>acantodios</strong> (peces espinosos) y los <strong>osteíctios</strong> (peces óseos). El placodermo <em>Dunkleosteus</em> alcanzaba los 6–8 metros y poseía una mordida formidable.</p>
+                    <p>Los <strong>peces de aletas lobuladas</strong> (sarcopterigios) son especialmente importantes, porque de ellos descienden los <strong>tetrápodos</strong>. Fósiles como <em>Tiktaalik roseae</em>, <em>Acanthostega</em> e <em>Ichthyostega</em> documentan la transición del agua a la tierra.</p>
+                    <h4>Los primeros bosques</h4>
+                    <p>Las plantas vasculares se diversifican enormemente. Aparecen los <strong>primeros árboles verdaderos</strong>, como <em>Archaeopteris</em>, con troncos leñosos y raíces profundas. Se forman los <strong>primeros bosques</strong> de la historia, que modifican el clima, los suelos y la atmósfera, reduciendo el CO₂ y aumentando el O₂.</p>
+                    <p>También aparecen los primeros <strong>insectos</strong> y los primeros <strong>anfibios</strong>.</p>
+                    <h4>La extinción del Frasniense-Fameniense</h4>
+                    <p>Al final del Devónico, una serie de crisis ecológicas —probablemente ligadas a anoxia oceánica y cambios climáticos— provocaron una extinción masiva que afectó sobre todo a los arrecifes y a los organismos marinos.</p>
+                `
             },
-            { 
-                nombre: "Carbonífero", 
-                rango: "359 – 299 Ma", 
-                icono: "🌳", 
+            {
+                nombre: "Carbonífero",
+                rango: "359 – 299 Ma",
+                icono: "🌳",
                 descripcion: "Grandes bosques pantanosos, insectos gigantes y reptiles.",
-                extra: "🦗 Libélulas del tamaño de un halcón (Meganeura)."
+                extra: "🦗 Libélulas del tamaño de un halcón (Meganeura).",
+                detalle: `
+                    <h4>Los grandes bosques de carbón</h4>
+                    <p>El Carbonífero debe su nombre a los enormes depósitos de <strong>carbón</strong> que se formaron a partir de los bosques pantanosos que cubrieron inmensas llanuras aluviales. Dominaban los paisajes los <strong>licopodios arborescentes</strong> (<em>Lepidodendron</em>, <em>Sigillaria</em>), los <strong>equisetos gigantes</strong> (<em>Calamites</em>) y helechos con semilla.</p>
+                    <p>La acumulación de materia vegetal en turberas, sin descomposición completa por falta de hongos capaces de degradar la lignina, dio lugar a las <strong>cuencas carboníferas</strong> de Europa y Norteamérica.</p>
+                    <h4>El oxígeno y los insectos gigantes</h4>
+                    <p>La intensa fotosíntesis elevó la concentración de <strong>oxígeno atmosférico hasta un 35%</strong>. Esto permitió que los insectos alcanzaran tamaños descomunales: la libélula <em>Meganeura</em> tenía una envergadura de 70 cm; los milpiés <em>Arthropleura</em> llegaban a 2 metros.</p>
+                    <h4>La aparición de los amniotas</h4>
+                    <p>En el Carbonífero superior aparecen los <strong>primeros reptiles</strong>, capaces de poner huevos con cáscara y reproducirse lejos del agua. Esto marca el inicio de la gran radiación de los amniotas, que dominará los ecosistemas terrestres durante el Pérmico y el Mesozoico.</p>
+                    <p>Los bosques carboníferos también albergaron anfibios de gran tamaño, como <em>Eogyrinus</em>, y una gran diversidad de artrópodos terrestres y acuáticos.</p>
+                `
             },
-            { 
-                nombre: "Pérmico", 
-                rango: "299 – 251 Ma", 
-                icono: "🌋", 
+            {
+                nombre: "Pérmico",
+                rango: "299 – 251 Ma",
+                icono: "🌋",
                 descripcion: "Formación de Pangea y la mayor extinción masiva.",
-                extra: "💀 Se extinguieron el 96% de las especies marinas."
+                extra: "💀 Se extinguieron el 96% de las especies marinas.",
+                detalle: `
+                    <h4>El supercontinente Pangea</h4>
+                    <p>El Pérmico es el período en que todos los continentes se unen formando <strong>Pangea</strong>, rodeado por el océano Panthalassa. Esta configuración tuvo enormes consecuencias: el interior del supercontinente se volvió árido y estacional, mientras que las costas conservaron climas más húmedos.</p>
+                    <h4>La radiación de los reptiles</h4>
+                    <p>Los <strong>amniotas</strong> se diversifican espectacularmente. Aparecen los <strong>pelicosaurios</strong> (como <em>Dimetrodon</em>, con su vela dorsal) y los <strong>terápsidos</strong>, grupo del que descienden los mamíferos. Los terápsidos dominan la fauna terrestre durante buena parte del Pérmico.</p>
+                    <p>Las floras del Pérmico incluyen <strong>glosopteridales</strong> (Gondwana), <strong>cordaites</strong> y las primeras <strong>coníferas</strong> y <strong>ginkgos</strong>. La vegetación se adapta a la aridez creciente.</p>
+                    <h4>La gran extinción</h4>
+                    <p>Hace 251 millones de años, una serie de erupciones volcánicas sin precedentes —los <strong>traps siberianos</strong>— liberaron enormes cantidades de gases de efecto invernadero. El resultado fue un <strong>calentamiento global extremo</strong>, anoxia oceánica, acidificación de los mares y destrucción del ozono. Desaparecieron el 96% de las especies marinas y el 70% de las terrestres, incluidos los trilobites, los corales rugosos y tabulados, y muchos linajes de terápsidos.</p>
+                `
             }
         ];
 
-        const timelineData = [
-            { year: "541 Ma", evento: "Inicio del Cámbrico - Explosión de vida" },
-            { year: "485 Ma", evento: "Primeros vertebrados sin mandíbula" },
-            { year: "444 Ma", evento: "Extinción masiva del Ordovícico-Silúrico" },
-            { year: "419 Ma", evento: "Primeras plantas vasculares en tierra" },
-            { year: "359 Ma", evento: "Extinción del Devónico tardío" },
-            { year: "300 Ma", evento: "Grandes bosques carboníferos" },
-            { year: "251 Ma", evento: "Extinción del Pérmico-Triásico (la Gran Mortandad)" }
-        ];
-
+        // Curiosidades
         const curiosidades = [
-            "El nombre 'Paleozoico' significa 'vida antigua' en griego.",
-            "Durante el Cámbrico, la vida era exclusivamente marina.",
-            "Los primeros bosques aparecieron en el Devónico, hace 380 Ma.",
-            "En el Carbonífero, el oxígeno atmosférico alcanzó el 35% (hoy 21%).",
-            "El supercontinente Pangea se formó al final del Paleozoico.",
-            "La extinción del Pérmico eliminó al 96% de las especies marinas.",
-            "Los trilobites, icono del Paleozoico, se extinguieron al final de la era.",
-            "Los primeros reptiles aparecieron en el Carbonífero."
+            "El nombre 'Paleozoico' proviene del griego y significa 'vida antigua'.",
+            "El Paleozoico abarca el 43% del tiempo total del eón Fanerozoico.",
+            "En el Cámbrico aparecieron los primeros ojos complejos, con más de 24.000 lentes en Anomalocaris.",
+            "Los trilobites tuvieron una visión tan sofisticada que algunos tenían ojos con cristales de calcita.",
+            "Los primeros árboles, como Archaeopteris, aparecieron 100 millones de años antes que los dinosaurios.",
+            "En el Carbonífero, el oxígeno atmosférico alcanzó el 35%, permitiendo insectos de tamaño gigantesco.",
+            "La libélula Meganeura tenía una envergadura de 70 cm, similar a la de un halcón pequeño.",
+            "Pangea se formó al final del Paleozoico y comenzó a fragmentarse en el Mesozoico.",
+            "La extinción del Pérmico-Triásico eliminó al 96% de las especies marinas y al 70% de las terrestres.",
+            "Los primeros reptiles aparecieron en el Carbonífero y pusieron huevos con cáscara, una innovación clave.",
+            "El período Pérmico debe su nombre a la ciudad rusa de Perm, donde se describieron por primera vez sus rocas.",
+            "La transición de pez a tetrápodo ocurrió en el Devónico, documentada por fósiles como Tiktaalik.",
+            "El esquisto de Burgess (Canadá) es uno de los yacimientos de fósiles blandos más importantes del mundo.",
+            "Los graptolitos, fósiles ordovícicos y silúricos, son excelentes indicadores bioestratigráficos.",
+            "Los arrecifes paleozoicos estaban construidos por corales tabulados y rugosos, hoy extintos.",
+            "El enfriamiento del Carbonífero se debió, en parte, a la expansión de los bosques que consumieron CO₂.",
+            "En el Pérmico, el interior de Pangea albergaba desiertos extremos con amplitudes térmicas enormes.",
+            "Los terápsidos del Pérmico son los antepasados directos de los mamíferos actuales."
         ];
 
+        // Timeline
+        const timelineData = [
+            { year: "541 Ma", evento: "Comienza el Cámbrico · Explosión de la vida animal" },
+            { year: "485 Ma", evento: "Inicio del Ordovícico · Primeros vertebrados sin mandíbula" },
+            { year: "444 Ma", evento: "Extinción Ordovícico-Silúrico · Glaciación gondwánica" },
+            { year: "419 Ma", evento: "Comienza el Devónico · Primeras plantas vasculares terrestres" },
+            { year: "359 Ma", evento: "Inicio del Carbonífero · Grandes bosques pantanosos" },
+            { year: "318 Ma", evento: "Primeros reptiles · Huevo amniótico" },
+            { year: "299 Ma", evento: "Comienza el Pérmico · Formación de Pangea" },
+            { year: "251 Ma", evento: "Gran extinción Pérmico-Triásico · Fin del Paleozoico" }
+        ];
+
+        // Extinciones (acordeón)
+        const extincionesData = [
+            {
+                titulo: "Extinción del Ordovícico-Silúrico",
+                rango: "~444 Ma",
+                detalle: `<p>Causada principalmente por la <strong>glaciación de Gondwana</strong> y la consiguiente caída del nivel del mar. Se extinguieron alrededor del <strong>85% de las especies marinas</strong>, especialmente braquiópodos, briozoos y trilobites. Fue la primera de las cinco grandes extinciones masivas.</p>`
+            },
+            {
+                titulo: "Extinción del Devónico tardío",
+                rango: "~375–359 Ma",
+                detalle: `<p>Conocida como evento <strong>Frasniense-Fameniense</strong>. Afectó gravemente a los arrecifes de coral y a los organismos marinos. Posibles causas: <strong>anoxia oceánica</strong>, cambios en el nivel del mar y enfriamiento global. Se extinguieron muchos grupos de peces y braquiópodos.</p>`
+            },
+            {
+                titulo: "Extinción del Pérmico-Triásico",
+                rango: "~251 Ma",
+                detalle: `<p>La <strong>mayor extinción masiva</strong> de la historia. Causada por las erupciones de los <strong>traps siberianos</strong>, que provocaron calentamiento global, anoxia oceánica y acidificación. Desaparecieron el <strong>96% de las especies marinas</strong> y el <strong>70% de las terrestres</strong>. Marcó el fin del Paleozoico y el comienzo del Mesozoico.</p>`
+            }
+        ];
+
+        // ============================================================
+        //  RENDERIZADO
+        // ============================================================
+
+        // --- Tarjetas de períodos ---
         const gridPeriodos = document.getElementById('gridPeriodos');
         periodosData.forEach((p, index) => {
             const card = document.createElement('div');
             card.className = 'periodo-card';
-            card.setAttribute('data-index', index);
             card.innerHTML = `
                 <div class="icono">${p.icono}</div>
                 <h4>${p.nombre}</h4>
@@ -573,10 +1079,54 @@
             `;
             card.addEventListener('click', () => {
                 mostrarTooltip(`<strong>${p.nombre}:</strong> ${p.extra}`);
+                // Abrir el acordeón correspondiente
+                const items = document.querySelectorAll('.acordeon-item');
+                if (items[index]) {
+                    items.forEach((it, i) => {
+                        if (i === index) it.classList.add('active');
+                        else it.classList.remove('active');
+                    });
+                    items[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             });
             gridPeriodos.appendChild(card);
         });
 
+        // --- Acordeón de períodos ---
+        const acordeonPeriodos = document.getElementById('acordeonPeriodos');
+        periodosData.forEach((p) => {
+            const item = document.createElement('div');
+            item.className = 'acordeon-item';
+            item.innerHTML = `
+                <div class="acordeon-header">
+                    <span>${p.icono} ${p.nombre}</span>
+                    <span class="rango-badge">${p.rango}</span>
+                </div>
+                <div class="acordeon-content">
+                    ${p.detalle}
+                </div>
+            `;
+            acordeonPeriodos.appendChild(item);
+        });
+
+        // --- Acordeón de extinciones ---
+        const acordeonExt = document.getElementById('acordeonExtinciones');
+        extincionesData.forEach((e) => {
+            const item = document.createElement('div');
+            item.className = 'acordeon-item';
+            item.innerHTML = `
+                <div class="acordeon-header">
+                    <span>💀 ${e.titulo}</span>
+                    <span class="rango-badge">${e.rango}</span>
+                </div>
+                <div class="acordeon-content">
+                    ${e.detalle}
+                </div>
+            `;
+            acordeonExt.appendChild(item);
+        });
+
+        // --- Curiosidades ---
         const listaCuriosidades = document.getElementById('listaCuriosidades');
         curiosidades.forEach(c => {
             const li = document.createElement('li');
@@ -584,6 +1134,7 @@
             listaCuriosidades.appendChild(li);
         });
 
+        // --- Timeline ---
         const timelineContainer = document.getElementById('timelineContainer');
         timelineData.forEach(item => {
             const div = document.createElement('div');
@@ -595,20 +1146,31 @@
             timelineContainer.appendChild(div);
         });
 
+        // ============================================================
+        //  INTERACTIVIDAD
+        // ============================================================
+
+        // Acordeones
+        document.querySelectorAll('.acordeon-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Tooltip
         const tooltip = document.getElementById('tooltip');
         let tooltipTimeout = null;
-
         function mostrarTooltip(mensaje) {
-            if (tooltipTimeout) {
-                clearTimeout(tooltipTimeout);
-            }
+            if (tooltipTimeout) clearTimeout(tooltipTimeout);
             tooltip.innerHTML = mensaje;
             tooltip.classList.add('show');
             tooltipTimeout = setTimeout(() => {
                 tooltip.classList.remove('show');
-            }, 3500);
+            }, 4000);
         }
 
+        // Botón dato aleatorio
         document.getElementById('btnDato').addEventListener('click', () => {
             const datos = [
                 "El Paleozoico duró unos 290 millones de años.",
@@ -617,16 +1179,29 @@
                 "Los insectos gigantes vivieron en el Carbonífero.",
                 "La extinción del Pérmico fue causada por erupciones volcánicas masivas.",
                 "Los fósiles del Paleozoico se encuentran en rocas sedimentarias.",
-                "Los mares del Paleozoico eran ricos en braquiópodos y crinoideos."
+                "Los mares del Paleozoico eran ricos en braquiópodos y crinoideos.",
+                "El oxígeno atmosférico alcanzó el 35% durante el Carbonífero.",
+                "Tiktaalik fue un fósil clave para entender la transición pez-tetrápodo.",
+                "Los trilobites se extinguieron al final del Pérmico, tras 270 millones de años de existencia."
             ];
             const random = datos[Math.floor(Math.random() * datos.length)];
             mostrarTooltip(`📘 ${random}`);
         });
 
         document.getElementById('btnPangea').addEventListener('click', () => {
-            mostrarTooltip('🌍 Pangea se formó a finales del Paleozoico y comenzó a fragmentarse en el Mesozoico.');
+            mostrarTooltip('🌍 Pangea se formó a finales del Paleozoico (~300 Ma) y comenzó a fragmentarse en el Mesozoico (~175 Ma).');
         });
 
+        const backTop = document.getElementById('backTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) backTop.classList.add('show');
+            else backTop.classList.remove('show');
+        });
+        backTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animación de aparición de secciones
         const secciones = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -635,7 +1210,7 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.05 });
 
         secciones.forEach(sec => {
             sec.style.opacity = 0;
@@ -654,7 +1229,7 @@
             });
         });
 
-        console.log('Sitio Paleozoico cargado correctamente 🦕');
+        console.log('🦕 Sitio Paleozoico completo cargado correctamente.');
     </script>
 </body>
 </html>
