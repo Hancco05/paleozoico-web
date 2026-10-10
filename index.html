@@ -6,7 +6,6 @@
     <title>Paleozoico · La Era de la Vida Antigua</title>
     <meta name="description" content="Sitio web educativo completo sobre el Paleozoico: historia, períodos, evolución, extinciones y geología.">
     <style>
-        /* Reset y variables */
         * {
             margin: 0;
             padding: 0;
@@ -33,7 +32,6 @@
             scroll-behavior: smooth;
         }
 
-        /* ===== HEADER ===== */
         header {
             background: linear-gradient(rgba(20, 40, 20, 0.75), rgba(30, 50, 30, 0.85)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600"><rect width="1200" height="600" fill="%233a5e3a"/><path d="M0 400 Q150 350 300 380 T600 340 T900 370 T1200 330 L1200 600 L0 600 Z" fill="%232e4a2e" opacity="0.6"/><path d="M0 450 Q200 420 400 460 T800 430 T1200 470 L1200 600 L0 600 Z" fill="%231e3a1e" opacity="0.7"/><circle cx="200" cy="150" r="40" fill="%23f0e68c" opacity="0.8"/><circle cx="950" cy="200" r="60" fill="%23f0e68c" opacity="0.7"/><circle cx="600" cy="100" r="30" fill="%23fff8dc" opacity="0.9"/></svg>');
             background-size: cover;
@@ -78,7 +76,6 @@
             animation: pulse 2.5s infinite;
         }
 
-        /* ===== NAV ===== */
         nav {
             background: var(--dark);
             padding: 0.8rem 1rem;
@@ -110,14 +107,12 @@
             transform: scale(1.05);
         }
 
-        /* ===== CONTAINER ===== */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1.5rem;
         }
 
-        /* ===== SECCIONES ===== */
         section {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(4px);
@@ -184,7 +179,6 @@
             font-size: 1.02rem;
         }
 
-        /* ===== PERIODOS GRID ===== */
         .periodos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -236,7 +230,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* ===== ACORDEÓN (para períodos detallados) ===== */
         .acordeon {
             margin: 1.5rem 0;
         }
@@ -306,7 +299,6 @@
             margin-top: 0.8rem;
         }
 
-        /* ===== TABLA ===== */
         .tabla-datos {
             overflow-x: auto;
             margin: 2rem 0;
@@ -346,7 +338,6 @@
             background: #ece4ce;
         }
 
-        /* ===== TIMELINE ===== */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -383,7 +374,6 @@
             font-weight: 500;
         }
 
-        /* ===== BOTÓN ===== */
         .btn {
             background: var(--primary);
             color: white;
@@ -419,7 +409,6 @@
             background: #a8743e;
         }
 
-        /* ===== CURIOSIDADES ===== */
         .curiosidades-lista {
             list-style: none;
             margin-top: 1.5rem;
@@ -450,7 +439,6 @@
             flex-shrink: 0;
         }
 
-        /* ===== TARJETAS DE DATOS (grid info) ===== */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -478,7 +466,6 @@
             margin-bottom: 0;
         }
 
-        /* ===== FOOTER ===== */
         footer {
             background: var(--dark);
             color: #ccc;
@@ -493,7 +480,6 @@
             text-decoration: none;
         }
 
-        /* ===== TOOLTIP ===== */
         .tooltip {
             position: fixed;
             bottom: 30px;
@@ -520,7 +506,6 @@
             transform: translateY(0);
         }
 
-        /* ===== ANIMACIONES ===== */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-40px); }
             to { opacity: 1; transform: translateY(0); }
@@ -535,7 +520,6 @@
             100% { transform: scale(1); }
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 700px) {
             section { padding: 1.5rem; }
             h2 { font-size: 1.6rem; padding-left: 1rem; }
@@ -548,7 +532,6 @@
             nav a { font-size: 0.85rem; padding: 0.4rem 0.7rem; }
         }
 
-        /* ===== BOTÓN VOLVER ARRIBA ===== */
         .back-top {
             position: fixed;
             bottom: 30px;
@@ -576,7 +559,6 @@
             transform: scale(1.1);
         }
 
-        /* ===== INDICE INTERACTIVO (chips) ===== */
         .chips {
             display: flex;
             flex-wrap: wrap;
@@ -602,7 +584,6 @@
             color: white;
         }
 
-        /* ===== CITA DESTACADA ===== */
         .cita {
             background: #eef3e8;
             border-left: 8px solid var(--primary);
@@ -617,14 +598,12 @@
 </head>
 <body>
 
-    <!-- ============ HEADER ============ -->
     <header>
         <h1>PALEOZOICO</h1>
         <p>La era de la vida antigua · 541 – 251 millones de años atrás</p>
         <div class="header-badge">🌍 Explosión de vida · Fósiles · Glaciaciones · Pangea</div>
     </header>
 
-    <!-- ============ NAVEGACIÓN ============ -->
     <nav>
         <a href="#introduccion">Introducción</a>
         <a href="#periodos">Períodos</a>
@@ -638,7 +617,6 @@
 
     <div class="container">
 
-        <!-- ============ INTRODUCCIÓN ============ -->
         <section id="introduccion">
             <h2>📜 Introducción al Paleozoico</h2>
             <p>El <strong>Paleozoico</strong> (del griego <em>palaiós</em> = antiguo y <em>zōḗ</em> = vida) es la primera era del eón Fanerozoico. Se extiende desde hace aproximadamente <strong>541 millones de años</strong> hasta hace <strong>251 millones de años</strong>, abarcando unos <strong>290 millones de años</strong>, más de la mitad de todo el Fanerozoico.</p>
@@ -672,7 +650,6 @@
             </div>
         </section>
 
-        <!-- ============ PERÍODOS ============ -->
         <section id="periodos">
             <h2>⏳ Los seis períodos del Paleozoico</h2>
             <p>El Paleozoico se divide en seis períodos geológicos: <strong>Cámbrico, Ordovícico, Silúrico, Devónico, Carbonífero y Pérmico</strong>. Cada uno trajo innovaciones evolutivas, cambios climáticos y reconfiguraciones de los continentes.</p>
@@ -688,7 +665,6 @@
             </div>
         </section>
 
-        <!-- ============ GEOLOGÍA ============ -->
         <section id="geologia">
             <h2>🌍 Geología, placas y continentes</h2>
             <p>El Paleozoico se caracteriza por un ciclo tectónico completo: comenzó con la <strong>fragmentación de la Pannotia</strong> (supercontinente neoproterozoico) y terminó con la <strong>formación de la Pangea</strong>, el mayor supercontinente conocido. Este ciclo condicionó la distribución de los mares, el clima y la evolución biológica.</p>
@@ -740,7 +716,6 @@
             </ol>
         </section>
 
-        <!-- ============ CLIMA ============ -->
         <section id="clima">
             <h2>🌡️ Clima y ambiente a lo largo del Paleozoico</h2>
             <p>El clima paleozoico experimentó variaciones notables: desde <strong>condiciones de invernadero</strong> hasta <strong>glaciaciones importantes</strong>, siempre moduladas por la posición de los continentes, los niveles de CO₂ y la circulación oceánica.</p>
@@ -770,7 +745,6 @@
             </ul>
         </section>
 
-        <!-- ============ EVOLUCIÓN ============ -->
         <section id="evolucion">
             <h2>🧬 Evolución de la vida en el Paleozoico</h2>
             <p>La historia evolutiva del Paleozoico es la historia de cómo la vida pasó de <strong>pequeños organismos marinos</strong> a <strong>complejos ecosistemas terrestres</strong>, incluyendo los primeros vertebrados, plantas vasculares e insectos voladores.</p>
@@ -797,13 +771,11 @@
             <p>La extinción del Pérmico-Triásico borró del mapa a muchos linajes, pero también abrió nichos ecológicos que serían ocupados por los dinosaurios en el Mesozoico.</p>
         </section>
 
-        <!-- ============ EXTINCIONES ============ -->
         <section id="extinciones">
             <h2>💀 Las extinciones masivas del Paleozoico</h2>
             <p>El Paleozoico estuvo jalonado por varias extinciones masivas, algunas de ellas entre las más severas de la historia de la Tierra.</p>
 
             <div class="acordeon" id="acordeonExtinciones">
-                <!-- Generado dinámicamente -->
             </div>
 
             <h3>La Gran Mortandad (Pérmico-Triásico)</h3>
@@ -816,7 +788,6 @@
             <p>Los <strong>traps siberianos</strong>, una enorme provincia ígnea, liberaron millones de km³ de lava y gases como CO₂ y SO₂, desencadenando un calentamiento global extremo, lluvia ácida, anoxia oceánica y agotamiento del ozono. La recuperación de los ecosistemas tardó entre <strong>5 y 10 millones de años</strong>.</p>
         </section>
 
-        <!-- ============ FÓSILES ============ -->
         <section id="fosiles">
             <h2>🦴 Yacimientos fosilíferos emblemáticos</h2>
             <p>El Paleozoico cuenta con algunos de los <strong>Lagerstätten</strong> (yacimientos de conservación excepcional) más importantes del mundo, que nos permiten reconstruir la vida de la época con un detalle asombroso.</p>
@@ -859,19 +830,15 @@
             </ul>
         </section>
 
-        <!-- ============ CURIOSIDADES ============ -->
         <section id="curiosidades">
             <h2>🧠 Curiosidades paleozoicas</h2>
             <ul class="curiosidades-lista" id="listaCuriosidades">
-                <!-- Generado con JS -->
             </ul>
         </section>
 
-        <!-- ============ LÍNEA TEMPORAL ============ -->
         <section id="timeline">
             <h2>🕰️ Línea temporal interactiva</h2>
             <div class="timeline" id="timelineContainer">
-                <!-- Generado con JS -->
             </div>
             <div style="text-align: center;">
                 <button class="btn" id="btnDato">🔍 Mostrar dato aleatorio</button>
@@ -881,36 +848,18 @@
 
     </div>
 
-    <!-- Tooltip flotante -->
     <div class="tooltip" id="tooltip"></div>
 
-    <!-- Botón volver arriba -->
     <button class="back-top" id="backTop" title="Volver arriba">↑</button>
 
-    <!-- ============ FOOTER ============ -->
     <footer>
         <p>🌿 Sitio educativo completo sobre el Paleozoico · HTML, CSS y JavaScript 🌿</p>
         <p style="margin-top: 0.6rem; font-size: 0.9rem;">Información basada en fuentes científicas: UCMP Berkeley, USGS, Natural History Museum, ScienceDirect</p>
         <p style="margin-top: 0.6rem; font-size: 0.85rem;">© 2025 · La Era de la Vida Antigua</p>
     </footer>
 
-    <!-- ============ JAVASCRIPT ============ -->
     <script>
-        // ============================================================
-        //  DATOS
-        // ============================================================
 
-        /**
-         * @typedef {Object} Periodo
-         * @property {string} nombre
-         * @property {string} rango
-         * @property {string} icono
-         * @property {string} descripcion
-         * @property {string} extra
-         * @property {string} detalle
-         */
-
-        /** @type {Periodo[]} */
         const periodosData = [
             {
                 nombre: "Cámbrico",
@@ -1009,7 +958,6 @@
             }
         ];
 
-        // Curiosidades
         const curiosidades = [
             "El nombre 'Paleozoico' proviene del griego y significa 'vida antigua'.",
             "El Paleozoico abarca el 43% del tiempo total del eón Fanerozoico.",
@@ -1031,7 +979,6 @@
             "Los terápsidos del Pérmico son los antepasados directos de los mamíferos actuales."
         ];
 
-        // Timeline
         const timelineData = [
             { year: "541 Ma", evento: "Comienza el Cámbrico · Explosión de la vida animal" },
             { year: "485 Ma", evento: "Inicio del Ordovícico · Primeros vertebrados sin mandíbula" },
@@ -1043,7 +990,6 @@
             { year: "251 Ma", evento: "Gran extinción Pérmico-Triásico · Fin del Paleozoico" }
         ];
 
-        // Extinciones (acordeón)
         const extincionesData = [
             {
                 titulo: "Extinción del Ordovícico-Silúrico",
@@ -1062,11 +1008,6 @@
             }
         ];
 
-        // ============================================================
-        //  RENDERIZADO
-        // ============================================================
-
-        // --- Tarjetas de períodos ---
         const gridPeriodos = document.getElementById('gridPeriodos');
         periodosData.forEach((p, index) => {
             const card = document.createElement('div');
@@ -1092,7 +1033,6 @@
             gridPeriodos.appendChild(card);
         });
 
-        // --- Acordeón de períodos ---
         const acordeonPeriodos = document.getElementById('acordeonPeriodos');
         periodosData.forEach((p) => {
             const item = document.createElement('div');
@@ -1109,7 +1049,6 @@
             acordeonPeriodos.appendChild(item);
         });
 
-        // --- Acordeón de extinciones ---
         const acordeonExt = document.getElementById('acordeonExtinciones');
         extincionesData.forEach((e) => {
             const item = document.createElement('div');
@@ -1126,7 +1065,6 @@
             acordeonExt.appendChild(item);
         });
 
-        // --- Curiosidades ---
         const listaCuriosidades = document.getElementById('listaCuriosidades');
         curiosidades.forEach(c => {
             const li = document.createElement('li');
@@ -1134,7 +1072,6 @@
             listaCuriosidades.appendChild(li);
         });
 
-        // --- Timeline ---
         const timelineContainer = document.getElementById('timelineContainer');
         timelineData.forEach(item => {
             const div = document.createElement('div');
@@ -1146,11 +1083,7 @@
             timelineContainer.appendChild(div);
         });
 
-        // ============================================================
-        //  INTERACTIVIDAD
-        // ============================================================
 
-        // Acordeones
         document.querySelectorAll('.acordeon-header').forEach(header => {
             header.addEventListener('click', () => {
                 const item = header.parentElement;
@@ -1158,7 +1091,6 @@
             });
         });
 
-        // Tooltip
         const tooltip = document.getElementById('tooltip');
         let tooltipTimeout = null;
         function mostrarTooltip(mensaje) {
@@ -1170,7 +1102,6 @@
             }, 4000);
         }
 
-        // Botón dato aleatorio
         document.getElementById('btnDato').addEventListener('click', () => {
             const datos = [
                 "El Paleozoico duró unos 290 millones de años.",
