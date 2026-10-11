@@ -9,9 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* ============================================
-           RESET Y VARIABLES
-           ============================================ */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -55,9 +52,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ============================================
-           FONDO DECORATIVO GLOBAL
-           ============================================ */
         body::before {
             content: '';
             position: fixed;
@@ -69,9 +63,6 @@
             z-index: 0;
         }
 
-        /* ============================================
-           BARRA DE PROGRESO DE SCROLL
-           ============================================ */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -84,9 +75,6 @@
             box-shadow: 0 0 12px rgba(212, 163, 115, 0.6);
         }
 
-        /* ============================================
-           HEADER HERO
-           ============================================ */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -277,9 +265,6 @@
             50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
         }
 
-        /* ============================================
-           NAVEGACIÓN
-           ============================================ */
         .nav {
             position: sticky;
             top: 0;
@@ -372,9 +357,6 @@
             cursor: pointer;
         }
 
-        /* ============================================
-           CONTENEDOR PRINCIPAL
-           ============================================ */
         .main {
             position: relative;
             z-index: 1;
@@ -383,9 +365,6 @@
             padding: 4rem 1.5rem;
         }
 
-        /* ============================================
-           SECCIONES
-           ============================================ */
         .section {
             margin-bottom: 6rem;
             opacity: 0;
@@ -448,9 +427,6 @@
             margin-right: auto;
         }
 
-        /* ============================================
-           CONTENIDO DE TEXTO
-           ============================================ */
         .prose {
             max-width: 800px;
             margin: 0 auto 2rem;
@@ -488,9 +464,6 @@
             font-weight: bold;
         }
 
-        /* ============================================
-           TARJETAS DE ESTADÍSTICAS
-           ============================================ */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -553,9 +526,6 @@
             font-weight: 500;
         }
 
-        /* ============================================
-           ACORDEÓN MEJORADO
-           ============================================ */
         .accordion {
             margin: 2rem 0;
             display: flex;
@@ -685,9 +655,6 @@
             margin-bottom: 0.4rem;
         }
 
-        /* ============================================
-           PERIODOS GRID
-           ============================================ */
         .periodos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -776,9 +743,6 @@
             transition: color 0.3s;
         }
 
-        /* ============================================
-           TABLA
-           ============================================ */
         .table-wrapper {
             background: white;
             border-radius: var(--radius);
@@ -830,9 +794,6 @@
             overflow-x: auto;
         }
 
-        /* ============================================
-           LÍNEA DE TIEMPO
-           ============================================ */
         .timeline {
             position: relative;
             padding: 2rem 0;
@@ -923,9 +884,6 @@
             box-shadow: 0 0 0 8px rgba(212, 163, 115, 0.3);
         }
 
-        /* ============================================
-           CURIOSIDADES
-           ============================================ */
         .curiosidades-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -975,9 +933,6 @@
             z-index: 1;
         }
 
-        /* ============================================
-           CITAS DESTACADAS
-           ============================================ */
         .quote {
             background: linear-gradient(135deg, rgba(74, 124, 89, 0.08), rgba(212, 163, 115, 0.08));
             border-left: 6px solid var(--primary);
@@ -1005,9 +960,6 @@
             line-height: 1;
         }
 
-        /* ============================================
-           BOTONES
-           ============================================ */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -1064,9 +1016,6 @@
             margin: 2.5rem 0;
         }
 
-        /* ============================================
-           INFO GRID (tarjetas de datos)
-           ============================================ */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1107,9 +1056,6 @@
             margin: 0;
         }
 
-        /* ============================================
-           TOOLTIP
-           ============================================ */
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -1137,9 +1083,6 @@
 
         .toast strong { color: var(--accent); }
 
-        /* ============================================
-           BOTÓN VOLVER ARRIBA
-           ============================================ */
         .back-top {
             position: fixed;
             bottom: 2rem;
@@ -1171,9 +1114,6 @@
             box-shadow: var(--shadow-lg);
         }
 
-        /* ============================================
-           FOOTER
-           ============================================ */
         .footer {
             background: var(--dark);
             color: var(--text-light);
@@ -1248,9 +1188,6 @@
             opacity: 0.6;
         }
 
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
         @media (max-width: 900px) {
             .nav-links { display: none; }
             .nav-toggle { display: block; }
@@ -1291,9 +1228,6 @@
             .prose p:first-of-type::first-letter { font-size: 3.5rem; }
         }
 
-        /* ============================================
-           UTILIDADES
-           ============================================ */
         .text-center { text-align: center; }
         .mt-3 { margin-top: 2rem; }
         .mb-2 { margin-bottom: 1rem; }
@@ -1301,10 +1235,8 @@
 </head>
 <body>
 
-    <!-- Barra de progreso de scroll -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- ============ HERO ============ -->
     <header class="hero">
         <div class="creature creature-1">🦕</div>
         <div class="creature creature-2">🦠</div>
@@ -1348,7 +1280,6 @@
         <div class="scroll-indicator">Explorar</div>
     </header>
 
-    <!-- ============ NAVEGACIÓN ============ -->
     <nav class="nav">
         <div class="nav-inner">
             <div class="nav-logo">
@@ -1368,10 +1299,8 @@
         </div>
     </nav>
 
-    <!-- ============ CONTENIDO PRINCIPAL ============ -->
     <main class="main">
 
-        <!-- ============ INTRODUCCIÓN ============ -->
         <section class="section" id="intro">
             <div class="section-header">
                 <span class="section-number">01 · Introducción</span>
@@ -1413,7 +1342,6 @@
             </div>
         </section>
 
-        <!-- ============ PERÍODOS ============ -->
         <section class="section" id="periodos">
             <div class="section-header">
                 <span class="section-number">02 · Períodos</span>
@@ -1426,7 +1354,6 @@
             <div class="accordion" id="periodosAccordion"></div>
         </section>
 
-        <!-- ============ GEOLOGÍA ============ -->
         <section class="section" id="geologia">
             <div class="section-header">
                 <span class="section-number">03 · Geología</span>
@@ -1524,7 +1451,6 @@
             </div>
         </section>
 
-        <!-- ============ CLIMA ============ -->
         <section class="section" id="clima">
             <div class="section-header">
                 <span class="section-number">04 · Clima</span>
@@ -1604,7 +1530,6 @@
             </div>
         </section>
 
-        <!-- ============ EVOLUCIÓN ============ -->
         <section class="section" id="evolucion">
             <div class="section-header">
                 <span class="section-number">05 · Evolución</span>
@@ -1619,7 +1544,6 @@
             <div class="accordion" id="evolucionAccordion"></div>
         </section>
 
-        <!-- ============ EXTINCIONES ============ -->
         <section class="section" id="extinciones">
             <div class="section-header">
                 <span class="section-number">06 · Extinciones</span>
@@ -1667,7 +1591,6 @@
             </div>
         </section>
 
-        <!-- ============ FÓSILES ============ -->
         <section class="section" id="fosiles">
             <div class="section-header">
                 <span class="section-number">07 · Fósiles</span>
@@ -1720,7 +1643,6 @@
             </div>
         </section>
 
-        <!-- ============ LÍNEA TEMPORAL ============ -->
         <section class="section" id="timeline">
             <div class="section-header">
                 <span class="section-number">08 · Cronología</span>
@@ -1736,7 +1658,6 @@
             </div>
         </section>
 
-        <!-- ============ CURIOSIDADES ============ -->
         <section class="section" id="curiosidades">
             <div class="section-header">
                 <span class="section-number">09 · Curiosidades</span>
@@ -1749,7 +1670,6 @@
 
     </main>
 
-    <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="footer-inner">
             <div>
@@ -1776,20 +1696,15 @@
             </div>
         </div>
         <div class="footer-bottom">
-            🌿 Sitio educativo · HTML, CSS y JavaScript · © 2025 La Era de la Vida Antigua 🌿
+            🌿 Sitio educativo · HTML, CSS y JavaScript · © 2026 La Era de la Vida Antigua 🌿
         </div>
     </footer>
 
-    <!-- Toast / Tooltip -->
     <div class="toast" id="toast"></div>
 
-    <!-- Botón volver arriba -->
     <button class="back-top" id="backTop" aria-label="Volver arriba">↑</button>
 
     <script>
-        /* ============================================
-           DATOS
-           ============================================ */
 
         const periodosData = [
             {
@@ -1974,11 +1889,6 @@
             "Los terápsidos del Pérmico son los antepasados directos de los mamíferos actuales."
         ];
 
-        /* ============================================
-           RENDERIZADO
-           ============================================ */
-
-        // Periodos grid
         const periodosGrid = document.getElementById('periodosGrid');
         periodosData.forEach((p, i) => {
             const card = document.createElement('div');
@@ -2002,7 +1912,6 @@
             periodosGrid.appendChild(card);
         });
 
-        // Acordeón de períodos
         const periodosAcc = document.getElementById('periodosAccordion');
         periodosData.forEach(p => {
             const item = document.createElement('div');
@@ -2023,7 +1932,6 @@
             periodosAcc.appendChild(item);
         });
 
-        // Acordeón de evolución
         const evolucionAcc = document.getElementById('evolucionAccordion');
         evolucionData.forEach(e => {
             const item = document.createElement('div');
@@ -2044,7 +1952,6 @@
             evolucionAcc.appendChild(item);
         });
 
-        // Acordeón de extinciones
         const extAcc = document.getElementById('extincionesAccordion');
         extincionesData.forEach(e => {
             const item = document.createElement('div');
@@ -2065,7 +1972,6 @@
             extAcc.appendChild(item);
         });
 
-        // Timeline
         const timelineContainer = document.getElementById('timelineContainer');
         timelineData.forEach((item, i) => {
             const div = document.createElement('div');
@@ -2080,7 +1986,6 @@
             timelineContainer.appendChild(div);
         });
 
-        // Curiosidades
         const curiosidadesGrid = document.getElementById('curiosidadesGrid');
         curiosidades.forEach(c => {
             const div = document.createElement('div');
@@ -2089,11 +1994,6 @@
             curiosidadesGrid.appendChild(div);
         });
 
-        /* ============================================
-           INTERACTIVIDAD
-           ============================================ */
-
-        // Acordeones
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
                 const item = header.parentElement;
@@ -2105,7 +2005,6 @@
             });
         });
 
-        // Toast
         const toast = document.getElementById('toast');
         let toastTimeout;
         function mostrarToast(mensaje) {
@@ -2115,7 +2014,6 @@
             toastTimeout = setTimeout(() => toast.classList.remove('show'), 4500);
         }
 
-        // Botón dato aleatorio
         document.getElementById('btnDato').addEventListener('click', () => {
             const datos = [
                 "El Paleozoico duró unos 290 millones de años, más de la mitad del Fanerozoico.",
@@ -2132,12 +2030,10 @@
             mostrarToast(`🎲 ${datos[Math.floor(Math.random() * datos.length)]}`);
         });
 
-        // Botón Pangea
         document.getElementById('btnPangea').addEventListener('click', () => {
             mostrarToast('🌍 <strong>Pangea</strong> se formó a finales del Paleozoico (~300 Ma) y comenzó a fragmentarse en el Mesozoico (~175 Ma). Su interior era un desierto extremo.');
         });
 
-        // Barra de progreso + botón volver arriba
         const scrollProgress = document.getElementById('scrollProgress');
         const backTop = document.getElementById('backTop');
 
@@ -2155,7 +2051,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Animación de aparición de secciones
         const secciones = document.querySelectorAll('.section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -2167,7 +2062,6 @@
 
         secciones.forEach(sec => observer.observe(sec));
 
-        // Activar las secciones ya visibles al cargar
         window.addEventListener('load', () => {
             secciones.forEach(sec => {
                 const rect = sec.getBoundingClientRect();

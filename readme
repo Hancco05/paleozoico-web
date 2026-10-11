@@ -32,6 +32,9 @@ paleozoico-app/
 └── src/
     └── index.html        Sitio web completo del Paleozoico
 
+![Pantalla .exe](assets/capturaprincipal2.png)
+
+
 
 INSTALACIÓN
 -----------
@@ -96,6 +99,7 @@ PERSONALIZAR EL ICONO
 3. Reemplaza el archivo icon.ico en la raíz
 4. Vuelve a ejecutar:  npm run build
 
+![Pantalla principal](assets/capturaprincipal.png)
 
 PERSONALIZAR EL NOMBRE
 ----------------------
