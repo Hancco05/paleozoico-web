@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, shell } = require('electron');
+const { app, BrowserWindow, Menu, shell, dialog } = require('electron');
 const path = require('path');
 
 let mainWindow;
@@ -22,18 +22,13 @@ function createWindow() {
 
     mainWindow.loadFile(path.join(__dirname, 'src', 'index.html'));
 
-    // Abrir enlaces externos en el navegador del sistema
     mainWindow.webContents.setWindowOpenHandler(({ url }) => {
         shell.openExternal(url);
         return { action: 'deny' };
     });
 
-    // Menú personalizado (opcional)
     const menu = Menu.buildFromTemplate([
-        {
-            label: 'Archivo',
-            submenu: [{ role: 'quit', label: 'Salir' }]
-        },
+        { label: 'Archivo', submenu: [{ role: 'quit', label: 'Salir' }] },
         {
             label: 'Ver',
             submenu: [
@@ -50,7 +45,6 @@ function createWindow() {
                 {
                     label: 'Acerca de Paleozoico',
                     click: () => {
-                        const { dialog } = require('electron');
                         dialog.showMessageBox(mainWindow, {
                             type: 'info',
                             title: 'Acerca de Paleozoico',

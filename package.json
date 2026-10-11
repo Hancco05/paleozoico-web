@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Explorador interactivo de la Era Paleozoica",
   "main": "main.js",
-  "author": "Tu Nombre",
+  "author": "Hancco05",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
@@ -15,7 +15,7 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.tunombre.paleozoico",
+    "appId": "com.hancco.paleozoico",
     "productName": "Paleozoico",
     "directories": {
       "output": "dist"
