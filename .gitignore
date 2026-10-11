@@ -1,0 +1,24 @@
+# Dependencias
+node_modules/
+
+# Build generado por electron-builder
+dist/
+build/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Archivos temporales
+*.tmp
+.cache/

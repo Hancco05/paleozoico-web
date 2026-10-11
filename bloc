@@ -1,0 +1,7 @@
+paleozoico-app/
+├── package.json
+├── main.js
+├── preload.js
+├── icon.ico
+└── src/
+    └── index.html   (tu sitio web completo)
