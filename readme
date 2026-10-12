@@ -13,13 +13,12 @@ Construida con HTML, CSS y JavaScript. Empaquetada con
 Electron para funcionar como programa nativo (.exe).
 
 REQUISITOS
-----------
 - Node.js 18 o superior (https://nodejs.org)
 - Windows 10/11, macOS o Linux
 - 300 MB de espacio libre aprox.
 
 ESTRUCTURA DEL PROYECTO
------------------------
+
 paleozoico-app/
 ├── package.json          Configuración del proyecto
 ├── main.js               Proceso principal de Electron
@@ -30,19 +29,17 @@ paleozoico-app/
     └── index.html        Sitio web completo del Paleozoico
 
 INSTALACIÓN
------------
+
 1. Abrir una terminal en la carpeta del proyecto
 2. Ejecutar:   npm install
 3. Esperar a que se descarguen las dependencias (~3 min)
 
 
 EJECUTAR EN MODO DESARROLLO
----------------------------
    npm start
 Se abre la app en una ventana propia (sin navegador).
 
 GENERAR EL EJECUTABLE (.exe)
-----------------------------
    npm run build
 
 Resultado en la carpeta dist/:
@@ -53,7 +50,6 @@ Solo portable (sin instalación):
    npm run build-portable
 
 CONTENIDO DEL SITIO
--------------------
   01. Introducción al Paleozoico
   02. Los seis períodos (con acordeón interactivo)
   03. Geología, placas y continentes
@@ -74,7 +70,6 @@ Características:
   - Animaciones de aparición
 
 ATAJOS Y CONTROLES
-------------------
   Ctrl + R              Recargar la app
   F11                   Pantalla completa
   Ctrl + + / -          Zoom
@@ -82,20 +77,17 @@ ATAJOS Y CONTROLES
   Alt + F4              Salir
 
 PERSONALIZAR EL ICONO
----------------------
 1. Crea una imagen cuadrada de 256x256 px
 2. Conviértela a .ico en https://icoconvert.com
 3. Reemplaza el archivo icon.ico en la raíz
 4. Vuelve a ejecutar:  npm run build
 
 PERSONALIZAR EL NOMBRE
-----------------------
 Edita package.json y cambia:
    "productName": "Paleozoico"
 por el nombre que prefieras.
 
 TECNOLOGÍAS USADAS
-------------------
   - Electron 31        → Contenedor de escritorio
   - electron-builder   → Generación del .exe
   - HTML5 + CSS3       → Interfaz y diseño
@@ -103,7 +95,6 @@ TECNOLOGÍAS USADAS
   - Fuentes Google     → Cinzel, Inter, Fraunces
 
 SOLUCIÓN DE PROBLEMAS
----------------------
 [Error] "npm no se reconoce"
   → Instalar Node.js desde https://nodejs.org
 
@@ -120,11 +111,10 @@ SOLUCIÓN DE PROBLEMAS
   → Ejecutar: npm install --force
 
 LICENCIA
---------
+
 Uso libre educativo y personal.
 
 CRÉDITOS
---------
 Información basada en:
   - UCMP Berkeley
   - USGS
