@@ -13,13 +13,11 @@ extinciones, fósiles, línea temporal y curiosidades.
 Construida con HTML, CSS y JavaScript. Empaquetada con
 Electron para funcionar como programa nativo (.exe).
 
-
 REQUISITOS
 ----------
 - Node.js 18 o superior (https://nodejs.org)
 - Windows 10/11, macOS o Linux
 - 300 MB de espacio libre aprox.
-
 
 ESTRUCTURA DEL PROYECTO
 -----------------------
@@ -31,8 +29,6 @@ paleozoico-app/
 ├── README.txt            Este archivo
 └── src/
     └── index.html        Sitio web completo del Paleozoico
-
-<img src="assets/capturaprincipal2.png" alt="Icono" width="200">
 
 INSTALACIÓN
 -----------
@@ -46,7 +42,6 @@ EJECUTAR EN MODO DESARROLLO
    npm start
 Se abre la app en una ventana propia (sin navegador).
 
-
 GENERAR EL EJECUTABLE (.exe)
 ----------------------------
    npm run build
@@ -57,7 +52,6 @@ Resultado en la carpeta dist/:
 
 Solo portable (sin instalación):
    npm run build-portable
-
 
 CONTENIDO DEL SITIO
 -------------------
@@ -80,7 +74,6 @@ Características:
   - Diseño responsive
   - Animaciones de aparición
 
-
 ATAJOS Y CONTROLES
 ------------------
   Ctrl + R              Recargar la app
@@ -89,7 +82,6 @@ ATAJOS Y CONTROLES
   Ctrl + 0              Restablecer zoom
   Alt + F4              Salir
 
-
 PERSONALIZAR EL ICONO
 ---------------------
 1. Crea una imagen cuadrada de 256x256 px
@@ -97,14 +89,11 @@ PERSONALIZAR EL ICONO
 3. Reemplaza el archivo icon.ico en la raíz
 4. Vuelve a ejecutar:  npm run build
 
-<img src="assets/capturaprincipal.png" alt="Icono" width="200">
-
 PERSONALIZAR EL NOMBRE
 ----------------------
 Edita package.json y cambia:
    "productName": "Paleozoico"
 por el nombre que prefieras.
-
 
 TECNOLOGÍAS USADAS
 ------------------
@@ -113,7 +102,6 @@ TECNOLOGÍAS USADAS
   - HTML5 + CSS3       → Interfaz y diseño
   - JavaScript (ES6+)  → Interactividad
   - Fuentes Google     → Cinzel, Inter, Fraunces
-
 
 SOLUCIÓN DE PROBLEMAS
 ---------------------
@@ -132,11 +120,9 @@ SOLUCIÓN DE PROBLEMAS
   → Desactivar antivirus durante la compilación
   → Ejecutar: npm install --force
 
-
 LICENCIA
 --------
 Uso libre educativo y personal.
-
 
 CRÉDITOS
 --------
